@@ -10,7 +10,7 @@
             "request": "launch",
             "program": "${file}",
             "console": "integratedTerminal",
-            "args":["--type","48"]
+            "args":["--points","--plt"]
         }
     ]
 }

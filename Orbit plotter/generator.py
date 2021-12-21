@@ -105,6 +105,45 @@ def getPlot_spiral(points=False):
 
 func=[getPlot_line,getPlot_line_wiggle,getPlot_parabole,getPlot_spiral]
 
+def checkType(f_type):
+    try:
+        f_type=int(f_type)
+        if f_type < 0 or f_type >= len(func):
+            raise argparse.ArgumentError
+    except:
+        print("Can't interpret type, please only use integers from 0 to ",len(func),f"(not including {len(func)})")
+        exit(1)
+    return f_type
+def checkAmount(num):
+    if num <= 0:
+        raise argparse.ArgumentError(None,"Argument invalid, amount to store should be 1 or more")
+    
+def timeFunc(zline):
+    size = len(zline)
+    toReturn = np.zeros(size)
+    for i in range(len(zline)-1):
+        size-=1
+        toAdd = np.random.uniform(low=0.1, high=1, size=(size))
+        toReturn[-size:] += toAdd
+    toReturn = np.array(sorted(toReturn)).astype(np.float32)
+    check = (toReturn[1:]-toReturn[0:-1])
+    return toReturn
+
+def getOrbit(how_many_to_return:int,f_type=random.randint(0,len(func)-1),points=False):
+    f_type=checkType(f_type)
+    checkAmount(how_many_to_return)
+    toReturn = []
+    for i in range(how_many_to_return):
+        tup = (func[f_type](points))
+        if not points:
+            tup.append(timeFunc(tup[2]))
+        else:
+            tup[0].append(timeFunc(tup[0][2]))    
+        toReturn.append(tup)
+    return toReturn
+
+
+
 # main
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
@@ -115,25 +154,17 @@ if __name__ == '__main__':
     arguments = parser.parse_args()
 
     points,f_type=arguments.points,arguments.type
-    try:
-        f_type=int(f_type)
-        if f_type < 0 or f_type >= len(func):
-            raise argparse.ArgumentError
-    except:
-        print("Can't interpret type, please only use integers from 0 to ",len(func))
-        exit(1)
-    # points=False
-    # f_type =   random.randint(0,len(func))
-    # f_type = 1
-
 
     yline, xline, zline,ydata,xdata,zdata=0,0,0,0,0,0
+
+    ret = getOrbit(1,f_type,points)
+    ret = ret[0]
+
     if not points:
-        yline, xline, zline = func[f_type](points)
+        yline, xline, zline = ret[0:3]
     else:
-        data = func[f_type](points)
-        yline, xline, zline = data[0]
-        ydata,xdata,zdata   = data[1]
+        yline, xline, zline = ret[0][0:3]
+        ydata,xdata,zdata   = ret[1]
     # yline, xline, zline = getPlot(random.randint(0, 3))
     if arguments.plt:
         fig = plt.figure()
@@ -145,6 +176,5 @@ if __name__ == '__main__':
 
         if points:
             ax.scatter3D(xdata, ydata, zdata, c=zdata, cmap='Greens')
-
-
-    plt.show()
+        plt.show()
+        pass
