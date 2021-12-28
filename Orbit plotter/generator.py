@@ -129,12 +129,17 @@ def timeFunc(zline):
     check = (toReturn[1:]-toReturn[0:-1])
     return toReturn
 
-def getOrbit(how_many_to_return:int,f_type=random.randint(0,len(func)-1),points=False):
-    f_type=checkType(f_type)
+def getOrbit(how_many_to_return:int,f_type=None,points=False):
     checkAmount(how_many_to_return)
     toReturn = []
     for i in range(how_many_to_return):
-        tup = (func[f_type](points))
+        if f_type != None:
+            f_type=checkType(f_type)
+
+        type_f = f_type
+        if type_f == None:
+            type_f = random.randint(0,len(func)-1)
+        tup = (func[type_f](points))
         if not points:
             tup.append(timeFunc(tup[2]))
         else:
