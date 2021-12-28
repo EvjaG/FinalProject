@@ -3,13 +3,13 @@ import generator
 import numpy as np
 
 
-how_many_orbits = 5
+how_many_orbits = 3
 plot_data = generator.getOrbit(how_many_orbits)
 
-# animateB = False
-animateB = True
-csvWrite = False
-# csvWrite = True
+animateB = False
+# animateB = True
+# csvWrite = False
+csvWrite = True
 
 if animateB:
 
@@ -24,29 +24,43 @@ if animateB:
         line.set_data(data[0:2, :num])
         line.set_3d_properties(data[2, :num])
         return line
-    for plot in plot_data:
-        if animate:
-            x,y,z=plot[0],plot[1],plot[2]
+f=[]
+writer = []
 
-            data = np.array([x, y, z])
-            fig = plt.figure(num="t=z")
-            ax = Axes3D(fig)
 
-            line, = plt.plot(data[0], data[1], data[2], lw=5,ls="-", c='green')
-            line_ani = animation.FuncAnimation(fig, animate, frames=len(plot[3]), fargs=(data, line), interval=1000/60, blit=False)
-            plt.show(block=True)
 
-        if csvWrite:
-            import csv
-            with open('./data.csv', 'a+') as f:
-                # create the csv writer
-                writer = csv.writer(f)
 
-                # write a row to the csv file
-                data=plot
-                x = ' '.join(data[0].astype(str))
-                y = ' '.join(data[1].astype(str))
-                z = ' '.join(data[2].astype(str))
-                t = ' '.join(data[3].astype(str))
-                writer.writerow([x,y,z,t])
-                pass
+for plot in plot_data:
+    if animateB:
+        x,y,z=plot[0],plot[1],plot[2]
+
+        data = np.array([x, y, z])
+        fig = plt.figure(num="t=z")
+        ax = Axes3D(fig)
+
+        line, = plt.plot((data[0]),(data[1]),(data[2]), lw=5,ls="-", c='green')
+        line_ani = animation.FuncAnimation(fig, animate, frames=len(plot[0]), fargs=(data, line), interval=1000/60, blit=False)
+        plt.show(block=True)
+
+    if csvWrite:
+        import csv
+        import uuid
+        unique_filename = str(uuid.uuid4())
+
+        f=  open(f'./data_{unique_filename}.csv', 'w+',newline='')
+        # create the csv writer
+        writer = csv.writer(f)
+        writer.writerow(["t","x","y","z","vx","vy","vz"])
+
+        data=plot
+        time=0
+        # write rows to the csv file
+        for i in range(len(data[0])):
+            t = (str(np.float16(time)))
+            x = (str(data[0][i]))
+            y = (str(data[1][i]))
+            z = (str(data[2][i]))
+            writer.writerow([t,x,y,z])
+            time+=0.1
+        
+    pass
