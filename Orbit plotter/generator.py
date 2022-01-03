@@ -83,6 +83,7 @@ def getPlot_spiral():
 
 
 func=[getPlot_line,getPlot_line_wiggle,getPlot_parabole,getPlot_spiral]
+funcName=["line","wiggle","parabole","spiral"]
 
 def checkType(f_type):
     try:
@@ -98,7 +99,7 @@ def checkAmount(num):
         raise argparse.ArgumentError(None,"Argument invalid, amount to store should be 1 or more")
     
 
-def getOrbit(how_many_to_return:int,f_type=None,numPoints=None):
+def getOrbit(how_many_to_return:int=1,f_type=None,numPoints=None):
     checkAmount(how_many_to_return)
     if numPoints != None:
         global num_of_points
