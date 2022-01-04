@@ -1,23 +1,56 @@
 from numpy.core.shape_base import block
 import generator
 import numpy as np
+import random
+import os
+import cv2
+import uuid
 
 
 how_many_orbits = 1000
 num_of_orbit_types = len(generator.func)
+funcNames = generator.funcName
 
+
+
+#create data folder designations***************
+trainFunc = funcNames.copy()
+testFunc = funcNames.copy()
+for i in range(len(trainFunc)):
+    trainFunc[i]    = 'data/train/'+trainFunc[i]
+    testFunc[i]     = 'data/test/'+testFunc[i]
+
+folders = ['data','data/train','data/test'] + trainFunc + testFunc
+#check and create data folders if not created
+for folder in folders:
+    if not os.path.exists(folder):
+        os.makedirs(folder)
+#**********************************************
+
+# What to do in iteration **************************
 animateB = False
 # animateB = True
-# csvWrite = False
-csvWrite = True
+csvWrite = False
+# csvWrite = True
+picWrite = True
+# picWrite = False
+# **************************************************
+
+
 
 f=[]
 writer = []
 
+traintest = "train"
 
 for j in range(how_many_orbits):
-    f_type = int( j % num_of_orbit_types) 
+    f_type = random.randint(0, num_of_orbit_types-1)
     plot = generator.getOrbit(f_type=f_type)
+    if j >= 0.8 * how_many_orbits:
+            traintest = "test"
+    unique_filename = str(uuid.uuid4())
+    f_type = funcNames[f_type]
+    pather = f'./data/{traintest}/{f_type}/data_{unique_filename}'
 
     if animateB:
         import matplotlib.pyplot as plt
@@ -40,17 +73,16 @@ for j in range(how_many_orbits):
         line, = plt.plot((data),(data[1]),(data[2]), lw=5,ls="-", c='green')
         line_ani = animation.FuncAnimation(fig, animate, frames=len(plot[0]), fargs=(data, line), interval=1000/60, blit=False)
         plt.show(block=True)
-
+    
+    
+    
     if csvWrite:
         import csv
-        import uuid
-        unique_filename = str(uuid.uuid4())
-        f_type = generator.funcName[f_type]
-        f=  open(f'./data/data_{unique_filename}_{f_type}.csv', 'w+',newline='')
-        # f2=  open(f'./dataIMG/data_{unique_filename}_{f_type}.jpg', 'w+',newline='')
+        f=  open(pather+'.csv', 'w+',newline='')
         # create the csv writer
         writer = csv.writer(f)
-        writer.writerow(["t","x","y","z","vx","vy","vz"])
+        writer.writerow(["t","x","y","z"])
+        # writer.writerow(["t","x","y","z","vx","vy","vz"])
 
         data=plot[0]
         time=0
@@ -62,5 +94,9 @@ for j in range(how_many_orbits):
             z = (str(data[2][i]))
             writer.writerow([t,x,y,z])
             time+=0.1
-        
+
+    if picWrite:
+        cv2.imwrite(pather+'.png',np.array(plot[0]))
+        pass
+
     pass
