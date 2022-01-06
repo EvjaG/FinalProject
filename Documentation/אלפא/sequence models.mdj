@@ -34,7 +34,7 @@
 							"_parent": {
 								"$ref": "AAAAAAF+KXf/PeZyavI="
 							},
-							"name": "FlowchartDiagram1",
+							"name": "classify from sensors",
 							"ownedViews": [
 								{
 									"_type": "FCProcessView",
@@ -552,442 +552,1303 @@
 									}
 								}
 							]
+						},
+						{
+							"_type": "FCFlowchart",
+							"_id": "AAAAAAF+KYb5B+dTHOE=",
+							"_parent": {
+								"$ref": "AAAAAAF+KXf/PeZyavI="
+							},
+							"name": "System alt function",
+							"ownedElements": [
+								{
+									"_type": "FCFlowchartDiagram",
+									"_id": "AAAAAAF+KYb5B+dUz3I=",
+									"_parent": {
+										"$ref": "AAAAAAF+KYb5B+dTHOE="
+									},
+									"name": "classify from DB",
+									"ownedViews": [
+										{
+											"_type": "FCProcessView",
+											"_id": "AAAAAAF+KYb5B+dXtlg=",
+											"_parent": {
+												"$ref": "AAAAAAF+KYb5B+dUz3I="
+											},
+											"model": {
+												"$ref": "AAAAAAF+KYb5B+dsNDE="
+											},
+											"subViews": [
+												{
+													"_type": "LabelView",
+													"_id": "AAAAAAF+KYb5B+dYBC8=",
+													"_parent": {
+														"$ref": "AAAAAAF+KYb5B+dXtlg="
+													},
+													"font": "Arial;13;0",
+													"left": 746,
+													"top": 226,
+													"width": 212,
+													"height": 26,
+													"text": "מודל לעיבוד הנתונים לפורמט קריא על ידי המכונה הלומדת",
+													"wordWrap": true
+												}
+											],
+											"font": "Arial;13;0",
+											"left": 736,
+											"top": 216,
+											"width": 232,
+											"height": 104,
+											"nameLabel": {
+												"$ref": "AAAAAAF+KYb5B+dYBC8="
+											}
+										},
+										{
+											"_type": "FCDatabaseView",
+											"_id": "AAAAAAF+KYb5B+dZj4o=",
+											"_parent": {
+												"$ref": "AAAAAAF+KYb5B+dUz3I="
+											},
+											"model": {
+												"$ref": "AAAAAAF+KYb5B+duMDU="
+											},
+											"subViews": [
+												{
+													"_type": "LabelView",
+													"_id": "AAAAAAF+KYb5B+daVjc=",
+													"_parent": {
+														"$ref": "AAAAAAF+KYb5B+dZj4o="
+													},
+													"font": "Arial;13;0",
+													"left": 322,
+													"top": 84,
+													"width": 100,
+													"height": 65,
+													"text": "מסד הנתונים",
+													"wordWrap": true
+												}
+											],
+											"font": "Arial;13;0",
+											"left": 312,
+											"top": 40,
+											"width": 120,
+											"height": 136,
+											"nameLabel": {
+												"$ref": "AAAAAAF+KYb5B+daVjc="
+											}
+										},
+										{
+											"_type": "FCProcessView",
+											"_id": "AAAAAAF+KYb5B+dfPc4=",
+											"_parent": {
+												"$ref": "AAAAAAF+KYb5B+dUz3I="
+											},
+											"model": {
+												"$ref": "AAAAAAF+KYb5B+dvOoE="
+											},
+											"subViews": [
+												{
+													"_type": "LabelView",
+													"_id": "AAAAAAF+KYb5B+dgQIw=",
+													"_parent": {
+														"$ref": "AAAAAAF+KYb5B+dfPc4="
+													},
+													"font": "Arial;13;0",
+													"left": 290,
+													"top": 266,
+													"width": 212,
+													"height": 13,
+													"text": "מכונה לומדת לטובת סיווג הגוף",
+													"wordWrap": true
+												}
+											],
+											"font": "Arial;13;0",
+											"left": 280,
+											"top": 256,
+											"width": 232,
+											"height": 104,
+											"nameLabel": {
+												"$ref": "AAAAAAF+KYb5B+dgQIw="
+											}
+										},
+										{
+											"_type": "FCFlowView",
+											"_id": "AAAAAAF+KYb5B+dh2r4=",
+											"_parent": {
+												"$ref": "AAAAAAF+KYb5B+dUz3I="
+											},
+											"model": {
+												"$ref": "AAAAAAF+KYb5B+dtrNY="
+											},
+											"subViews": [
+												{
+													"_type": "EdgeLabelView",
+													"_id": "AAAAAAF+KYb5B+di/m4=",
+													"_parent": {
+														"$ref": "AAAAAAF+KYb5B+dh2r4="
+													},
+													"model": {
+														"$ref": "AAAAAAF+KYb5B+dtrNY="
+													},
+													"font": "Arial;13;0",
+													"left": 569,
+													"top": 287,
+													"width": 107.71337890625,
+													"height": 26,
+													"alpha": 1.5707958506044204,
+													"distance": 21,
+													"hostEdge": {
+														"$ref": "AAAAAAF+KYb5B+dh2r4="
+													},
+													"edgePosition": 1,
+													"text": "פורמט קריא למכונה",
+													"wordWrap": true
+												}
+											],
+											"font": "Arial;13;0",
+											"head": {
+												"$ref": "AAAAAAF+KYb5B+dfPc4="
+											},
+											"tail": {
+												"$ref": "AAAAAAF+KYb5B+dXtlg="
+											},
+											"lineStyle": 2,
+											"points": "736:280;511:280",
+											"nameLabel": {
+												"$ref": "AAAAAAF+KYb5B+di/m4="
+											}
+										},
+										{
+											"_type": "FCProcessView",
+											"_id": "AAAAAAF+KYb5B+djA0U=",
+											"_parent": {
+												"$ref": "AAAAAAF+KYb5B+dUz3I="
+											},
+											"model": {
+												"$ref": "AAAAAAF+KYb5B+dxAjk="
+											},
+											"subViews": [
+												{
+													"_type": "LabelView",
+													"_id": "AAAAAAF+KYb5B+dkRZ4=",
+													"_parent": {
+														"$ref": "AAAAAAF+KYb5B+djA0U="
+													},
+													"font": "Arial;13;0",
+													"left": 266,
+													"top": 426,
+													"width": 212,
+													"height": 26,
+													"text": "מודל להכנסת הדאטה למסד הנתונים בתוספת הסיווג",
+													"wordWrap": true
+												}
+											],
+											"font": "Arial;13;0",
+											"left": 256,
+											"top": 416,
+											"width": 232,
+											"height": 88,
+											"nameLabel": {
+												"$ref": "AAAAAAF+KYb5B+dkRZ4="
+											}
+										},
+										{
+											"_type": "FCFlowView",
+											"_id": "AAAAAAF+KYb5B+dlF68=",
+											"_parent": {
+												"$ref": "AAAAAAF+KYb5B+dUz3I="
+											},
+											"model": {
+												"$ref": "AAAAAAF+KYb5B+dwGEc="
+											},
+											"subViews": [
+												{
+													"_type": "EdgeLabelView",
+													"_id": "AAAAAAF+KYb5B+dm4qY=",
+													"_parent": {
+														"$ref": "AAAAAAF+KYb5B+dlF68="
+													},
+													"model": {
+														"$ref": "AAAAAAF+KYb5B+dwGEc="
+													},
+													"font": "Arial;13;0",
+													"left": 767,
+													"top": 343,
+													"width": 88.7783203125,
+													"height": 13,
+													"alpha": -2.2782280687904457,
+													"distance": 90.78546139112804,
+													"hostEdge": {
+														"$ref": "AAAAAAF+KYb5B+dlF68="
+													},
+													"edgePosition": 1,
+													"text": "סיווג המסלול"
+												}
+											],
+											"font": "Arial;13;0",
+											"head": {
+												"$ref": "AAAAAAF+KYb5B+djA0U="
+											},
+											"tail": {
+												"$ref": "AAAAAAF+KYb5B+dfPc4="
+											},
+											"lineStyle": 2,
+											"points": "511:339;880:339;880:480;487:480",
+											"nameLabel": {
+												"$ref": "AAAAAAF+KYb5B+dm4qY="
+											}
+										},
+										{
+											"_type": "FCFlowView",
+											"_id": "AAAAAAF+KYb5B+dny3Q=",
+											"_parent": {
+												"$ref": "AAAAAAF+KYb5B+dUz3I="
+											},
+											"model": {
+												"$ref": "AAAAAAF+KYb5B+dyswE="
+											},
+											"subViews": [
+												{
+													"_type": "EdgeLabelView",
+													"_id": "AAAAAAF+KYb5B+dotio=",
+													"_parent": {
+														"$ref": "AAAAAAF+KYb5B+dny3Q="
+													},
+													"model": {
+														"$ref": "AAAAAAF+KYb5B+dyswE="
+													},
+													"visible": false,
+													"font": "Arial;13;0",
+													"left": 176,
+													"top": 179,
+													"height": 13,
+													"alpha": 1.5707963267948966,
+													"distance": 15,
+													"hostEdge": {
+														"$ref": "AAAAAAF+KYb5B+dny3Q="
+													},
+													"edgePosition": 1
+												}
+											],
+											"font": "Arial;13;0",
+											"head": {
+												"$ref": "AAAAAAF+KYb5B+dZj4o="
+											},
+											"tail": {
+												"$ref": "AAAAAAF+KYb5B+djA0U="
+											},
+											"lineStyle": 2,
+											"points": "256:464;176:464;176:200;368:200;368:175",
+											"nameLabel": {
+												"$ref": "AAAAAAF+KYb5B+dotio="
+											}
+										},
+										{
+											"_type": "FCProcessView",
+											"_id": "AAAAAAF+KY3Pceew4ZI=",
+											"_parent": {
+												"$ref": "AAAAAAF+KYb5B+dUz3I="
+											},
+											"model": {
+												"$ref": "AAAAAAF+KY3Pceeu7Yk="
+											},
+											"subViews": [
+												{
+													"_type": "LabelView",
+													"_id": "AAAAAAF+KY3Pceex2DQ=",
+													"_parent": {
+														"$ref": "AAAAAAF+KY3Pceew4ZI="
+													},
+													"font": "Arial;13;0",
+													"left": 834,
+													"top": 90,
+													"width": 132,
+													"height": 26,
+													"text": "בדיקה: האם בפורמט המתאים כבר לסיווג?",
+													"wordWrap": true
+												}
+											],
+											"font": "Arial;13;0",
+											"left": 824,
+											"top": 80,
+											"width": 152,
+											"height": 88,
+											"nameLabel": {
+												"$ref": "AAAAAAF+KY3Pceex2DQ="
+											}
+										},
+										{
+											"_type": "FCFlowView",
+											"_id": "AAAAAAF+KY40QOe40os=",
+											"_parent": {
+												"$ref": "AAAAAAF+KYb5B+dUz3I="
+											},
+											"model": {
+												"$ref": "AAAAAAF+KY40QOe27jM="
+											},
+											"subViews": [
+												{
+													"_type": "EdgeLabelView",
+													"_id": "AAAAAAF+KY40QOe57/E=",
+													"_parent": {
+														"$ref": "AAAAAAF+KY40QOe40os="
+													},
+													"model": {
+														"$ref": "AAAAAAF+KY40QOe27jM="
+													},
+													"font": "Arial;13;0",
+													"left": 495,
+													"top": 70,
+													"width": 116,
+													"height": 39,
+													"alpha": -3.526750207004716,
+													"distance": 79.84985911070852,
+													"hostEdge": {
+														"$ref": "AAAAAAF+KY40QOe40os="
+													},
+													"edgePosition": 1,
+													"text": "התחלה:  משיכת מסלולים לא מסווגים מהמסד לטובת סיווג",
+													"wordWrap": true
+												}
+											],
+											"font": "Arial;13;0",
+											"head": {
+												"$ref": "AAAAAAF+KY3Pceew4ZI="
+											},
+											"tail": {
+												"$ref": "AAAAAAF+KYb5B+dZj4o="
+											},
+											"lineStyle": 2,
+											"points": "431:120;824:120",
+											"nameLabel": {
+												"$ref": "AAAAAAF+KY40QOe57/E="
+											}
+										},
+										{
+											"_type": "FCProcessView",
+											"_id": "AAAAAAF+KZHSS+fb4VY=",
+											"_parent": {
+												"$ref": "AAAAAAF+KYb5B+dUz3I="
+											},
+											"model": {
+												"$ref": "AAAAAAF+KZHSSufZkZU="
+											},
+											"subViews": [
+												{
+													"_type": "LabelView",
+													"_id": "AAAAAAF+KZHSS+fcFcw=",
+													"_parent": {
+														"$ref": "AAAAAAF+KZHSS+fb4VY="
+													},
+													"font": "Arial;13;0",
+													"left": 1058,
+													"top": 322,
+													"width": 196,
+													"height": 26,
+													"text": "שליחת המסלול לפח המחזור וקביעת תאריך מחיקתו מהמסד",
+													"wordWrap": true
+												}
+											],
+											"font": "Arial;13;0",
+											"left": 1048,
+											"top": 312,
+											"width": 216,
+											"height": 88,
+											"nameLabel": {
+												"$ref": "AAAAAAF+KZHSS+fcFcw="
+											}
+										},
+										{
+											"_type": "FCFlowView",
+											"_id": "AAAAAAF+KZPX0ufyyDY=",
+											"_parent": {
+												"$ref": "AAAAAAF+KYb5B+dUz3I="
+											},
+											"model": {
+												"$ref": "AAAAAAF+KZPX0efwc6w="
+											},
+											"subViews": [
+												{
+													"_type": "EdgeLabelView",
+													"_id": "AAAAAAF+KZPX0ufzAeo=",
+													"_parent": {
+														"$ref": "AAAAAAF+KZPX0ufyyDY="
+													},
+													"model": {
+														"$ref": "AAAAAAF+KZPX0efwc6w="
+													},
+													"font": "Arial;13;0",
+													"left": 611,
+													"top": 193,
+													"width": 10.20068359375,
+													"height": 13,
+													"alpha": 1.5707963267948966,
+													"distance": 15,
+													"hostEdge": {
+														"$ref": "AAAAAAF+KZPX0ufyyDY="
+													},
+													"edgePosition": 1,
+													"text": "כן"
+												}
+											],
+											"font": "Arial;13;0",
+											"head": {
+												"$ref": "AAAAAAF+KYb5B+dfPc4="
+											},
+											"tail": {
+												"$ref": "AAAAAAF+KY3Pceew4ZI="
+											},
+											"lineStyle": 2,
+											"points": "840:167;840:184;395:184;395:256",
+											"nameLabel": {
+												"$ref": "AAAAAAF+KZPX0ufzAeo="
+											}
+										},
+										{
+											"_type": "FCProcessView",
+											"_id": "AAAAAAF+KZUinOgUHyQ=",
+											"_parent": {
+												"$ref": "AAAAAAF+KYb5B+dUz3I="
+											},
+											"model": {
+												"$ref": "AAAAAAF+KZUinOgSrYc="
+											},
+											"subViews": [
+												{
+													"_type": "LabelView",
+													"_id": "AAAAAAF+KZUinOgVEFM=",
+													"_parent": {
+														"$ref": "AAAAAAF+KZUinOgUHyQ="
+													},
+													"font": "Arial;13;0",
+													"left": 1010,
+													"top": 154,
+													"width": 197,
+													"height": 26,
+													"text": "האם ניתן לעבד את המסלול לפורמט קריא?",
+													"wordWrap": true
+												}
+											],
+											"font": "Arial;13;0",
+											"left": 1000,
+											"top": 144,
+											"width": 217,
+											"height": 96,
+											"nameLabel": {
+												"$ref": "AAAAAAF+KZUinOgVEFM="
+											}
+										},
+										{
+											"_type": "FCFlowView",
+											"_id": "AAAAAAF+KZZ2ROgmeww=",
+											"_parent": {
+												"$ref": "AAAAAAF+KYb5B+dUz3I="
+											},
+											"model": {
+												"$ref": "AAAAAAF+KZZ2Q+gkrxg="
+											},
+											"subViews": [
+												{
+													"_type": "EdgeLabelView",
+													"_id": "AAAAAAF+KZZ2ROgnFAw=",
+													"_parent": {
+														"$ref": "AAAAAAF+KZZ2ROgmeww="
+													},
+													"model": {
+														"$ref": "AAAAAAF+KZZ2Q+gkrxg="
+													},
+													"font": "Arial;13;0",
+													"left": 1056,
+													"top": 95,
+													"width": 15.05029296875,
+													"height": 13,
+													"alpha": -1.6936318306855542,
+													"distance": 81.61494961096282,
+													"hostEdge": {
+														"$ref": "AAAAAAF+KZZ2ROgmeww="
+													},
+													"edgePosition": 1,
+													"text": "לא"
+												}
+											],
+											"font": "Arial;13;0",
+											"head": {
+												"$ref": "AAAAAAF+KZUinOgUHyQ="
+											},
+											"tail": {
+												"$ref": "AAAAAAF+KY3Pceew4ZI="
+											},
+											"lineStyle": 2,
+											"points": "975:112;1144:112;1144:144",
+											"nameLabel": {
+												"$ref": "AAAAAAF+KZZ2ROgnFAw="
+											}
+										},
+										{
+											"_type": "FCFlowView",
+											"_id": "AAAAAAF+KZcFReg4//k=",
+											"_parent": {
+												"$ref": "AAAAAAF+KYb5B+dUz3I="
+											},
+											"model": {
+												"$ref": "AAAAAAF+KZcFReg29Xo="
+											},
+											"subViews": [
+												{
+													"_type": "EdgeLabelView",
+													"_id": "AAAAAAF+KZcFReg5KAQ=",
+													"_parent": {
+														"$ref": "AAAAAAF+KZcFReg4//k="
+													},
+													"model": {
+														"$ref": "AAAAAAF+KZcFReg29Xo="
+													},
+													"font": "Arial;13;0",
+													"left": 1026,
+													"top": 271,
+													"width": 18,
+													"height": 13,
+													"alpha": 2.2367660058142316,
+													"distance": 17.804493814764857,
+													"hostEdge": {
+														"$ref": "AAAAAAF+KZcFReg4//k="
+													},
+													"edgePosition": 1,
+													"text": "כן"
+												}
+											],
+											"font": "Arial;13;0",
+											"head": {
+												"$ref": "AAAAAAF+KYb5B+dXtlg="
+											},
+											"tail": {
+												"$ref": "AAAAAAF+KZUinOgUHyQ="
+											},
+											"lineStyle": 2,
+											"points": "1024:239;1024:264;967:264",
+											"nameLabel": {
+												"$ref": "AAAAAAF+KZcFReg5KAQ="
+											}
+										},
+										{
+											"_type": "FCFlowView",
+											"_id": "AAAAAAF+KZc9FOhFewg=",
+											"_parent": {
+												"$ref": "AAAAAAF+KYb5B+dUz3I="
+											},
+											"model": {
+												"$ref": "AAAAAAF+KZc9FOhDQds="
+											},
+											"subViews": [
+												{
+													"_type": "EdgeLabelView",
+													"_id": "AAAAAAF+KZc9FOhGULI=",
+													"_parent": {
+														"$ref": "AAAAAAF+KZc9FOhFewg="
+													},
+													"model": {
+														"$ref": "AAAAAAF+KZc9FOhDQds="
+													},
+													"font": "Arial;13;0",
+													"left": 1166,
+													"top": 272,
+													"width": 15.05029296875,
+													"height": 13,
+													"alpha": 1.3597028696432434,
+													"distance": 14.317821063276353,
+													"hostEdge": {
+														"$ref": "AAAAAAF+KZc9FOhFewg="
+													},
+													"edgePosition": 1,
+													"text": "לא"
+												}
+											],
+											"font": "Arial;13;0",
+											"head": {
+												"$ref": "AAAAAAF+KZHSS+fb4VY="
+											},
+											"tail": {
+												"$ref": "AAAAAAF+KZUinOgUHyQ="
+											},
+											"lineStyle": 2,
+											"points": "1160:239;1160:312",
+											"nameLabel": {
+												"$ref": "AAAAAAF+KZc9FOhGULI="
+											}
+										},
+										{
+											"_type": "FCFlowView",
+											"_id": "AAAAAAF+KZgcUehRjLg=",
+											"_parent": {
+												"$ref": "AAAAAAF+KYb5B+dUz3I="
+											},
+											"model": {
+												"$ref": "AAAAAAF+KZgcT+hPAj0="
+											},
+											"subViews": [
+												{
+													"_type": "EdgeLabelView",
+													"_id": "AAAAAAF+KZgcUehS1A4=",
+													"_parent": {
+														"$ref": "AAAAAAF+KZgcUehRjLg="
+													},
+													"model": {
+														"$ref": "AAAAAAF+KZgcT+hPAj0="
+													},
+													"font": "Arial;13;0",
+													"left": 775,
+													"top": 415,
+													"width": 84.8681640625,
+													"height": 13,
+													"alpha": -0.08673834284525794,
+													"distance": 207.78113485107352,
+													"hostEdge": {
+														"$ref": "AAAAAAF+KZgcUehRjLg="
+													},
+													"edgePosition": 1,
+													"text": "המסלול המקורי"
+												}
+											],
+											"font": "Arial;13;0",
+											"head": {
+												"$ref": "AAAAAAF+KYb5B+djA0U="
+											},
+											"tail": {
+												"$ref": "AAAAAAF+KZUinOgUHyQ="
+											},
+											"lineStyle": 2,
+											"points": "1024:239;1024:440;487:440",
+											"nameLabel": {
+												"$ref": "AAAAAAF+KZgcUehS1A4="
+											}
+										}
+									]
+								},
+								{
+									"_type": "FCProcess",
+									"_id": "AAAAAAF+KYb5B+dsNDE=",
+									"_parent": {
+										"$ref": "AAAAAAF+KYb5B+dTHOE="
+									},
+									"name": "מודל לעיבוד הנתונים לפורמט קריא על ידי המכונה הלומדת",
+									"ownedElements": [
+										{
+											"_type": "FCFlow",
+											"_id": "AAAAAAF+KYb5B+dtrNY=",
+											"_parent": {
+												"$ref": "AAAAAAF+KYb5B+dsNDE="
+											},
+											"name": "פורמט קריא למכונה",
+											"source": {
+												"$ref": "AAAAAAF+KYb5B+dsNDE="
+											},
+											"target": {
+												"$ref": "AAAAAAF+KYb5B+dvOoE="
+											}
+										}
+									]
+								},
+								{
+									"_type": "FCDatabase",
+									"_id": "AAAAAAF+KYb5B+duMDU=",
+									"_parent": {
+										"$ref": "AAAAAAF+KYb5B+dTHOE="
+									},
+									"name": "מסד הנתונים",
+									"ownedElements": [
+										{
+											"_type": "FCFlow",
+											"_id": "AAAAAAF+KY40QOe27jM=",
+											"_parent": {
+												"$ref": "AAAAAAF+KYb5B+duMDU="
+											},
+											"name": "התחלה:  משיכת מסלולים לא מסווגים מהמסד לטובת סיווג",
+											"source": {
+												"$ref": "AAAAAAF+KYb5B+duMDU="
+											},
+											"target": {
+												"$ref": "AAAAAAF+KY3Pceeu7Yk="
+											}
+										}
+									]
+								},
+								{
+									"_type": "FCProcess",
+									"_id": "AAAAAAF+KYb5B+dvOoE=",
+									"_parent": {
+										"$ref": "AAAAAAF+KYb5B+dTHOE="
+									},
+									"name": "מכונה לומדת לטובת סיווג הגוף",
+									"ownedElements": [
+										{
+											"_type": "FCFlow",
+											"_id": "AAAAAAF+KYb5B+dwGEc=",
+											"_parent": {
+												"$ref": "AAAAAAF+KYb5B+dvOoE="
+											},
+											"name": "סיווג המסלול",
+											"source": {
+												"$ref": "AAAAAAF+KYb5B+dvOoE="
+											},
+											"target": {
+												"$ref": "AAAAAAF+KYb5B+dxAjk="
+											}
+										}
+									]
+								},
+								{
+									"_type": "FCProcess",
+									"_id": "AAAAAAF+KYb5B+dxAjk=",
+									"_parent": {
+										"$ref": "AAAAAAF+KYb5B+dTHOE="
+									},
+									"name": "מודל להכנסת הדאטה למסד הנתונים בתוספת הסיווג",
+									"ownedElements": [
+										{
+											"_type": "FCFlow",
+											"_id": "AAAAAAF+KYb5B+dyswE=",
+											"_parent": {
+												"$ref": "AAAAAAF+KYb5B+dxAjk="
+											},
+											"source": {
+												"$ref": "AAAAAAF+KYb5B+dxAjk="
+											},
+											"target": {
+												"$ref": "AAAAAAF+KYb5B+duMDU="
+											}
+										}
+									]
+								},
+								{
+									"_type": "FCProcess",
+									"_id": "AAAAAAF+KY3Pceeu7Yk=",
+									"_parent": {
+										"$ref": "AAAAAAF+KYb5B+dTHOE="
+									},
+									"name": "בדיקה: האם בפורמט המתאים כבר לסיווג?",
+									"ownedElements": [
+										{
+											"_type": "FCFlow",
+											"_id": "AAAAAAF+KZPX0efwc6w=",
+											"_parent": {
+												"$ref": "AAAAAAF+KY3Pceeu7Yk="
+											},
+											"name": "כן",
+											"source": {
+												"$ref": "AAAAAAF+KY3Pceeu7Yk="
+											},
+											"target": {
+												"$ref": "AAAAAAF+KYb5B+dvOoE="
+											}
+										},
+										{
+											"_type": "FCFlow",
+											"_id": "AAAAAAF+KZZ2Q+gkrxg=",
+											"_parent": {
+												"$ref": "AAAAAAF+KY3Pceeu7Yk="
+											},
+											"name": "לא",
+											"source": {
+												"$ref": "AAAAAAF+KY3Pceeu7Yk="
+											},
+											"target": {
+												"$ref": "AAAAAAF+KZUinOgSrYc="
+											}
+										}
+									]
+								},
+								{
+									"_type": "FCProcess",
+									"_id": "AAAAAAF+KZHSSufZkZU=",
+									"_parent": {
+										"$ref": "AAAAAAF+KYb5B+dTHOE="
+									},
+									"name": "שליחת המסלול לפח המחזור וקביעת תאריך מחיקתו מהמסד"
+								},
+								{
+									"_type": "FCProcess",
+									"_id": "AAAAAAF+KZUinOgSrYc=",
+									"_parent": {
+										"$ref": "AAAAAAF+KYb5B+dTHOE="
+									},
+									"name": "האם ניתן לעבד את המסלול לפורמט קריא?",
+									"ownedElements": [
+										{
+											"_type": "FCFlow",
+											"_id": "AAAAAAF+KZcFReg29Xo=",
+											"_parent": {
+												"$ref": "AAAAAAF+KZUinOgSrYc="
+											},
+											"name": "כן",
+											"source": {
+												"$ref": "AAAAAAF+KZUinOgSrYc="
+											},
+											"target": {
+												"$ref": "AAAAAAF+KYb5B+dsNDE="
+											}
+										},
+										{
+											"_type": "FCFlow",
+											"_id": "AAAAAAF+KZc9FOhDQds=",
+											"_parent": {
+												"$ref": "AAAAAAF+KZUinOgSrYc="
+											},
+											"name": "לא",
+											"source": {
+												"$ref": "AAAAAAF+KZUinOgSrYc="
+											},
+											"target": {
+												"$ref": "AAAAAAF+KZHSSufZkZU="
+											}
+										},
+										{
+											"_type": "FCFlow",
+											"_id": "AAAAAAF+KZgcT+hPAj0=",
+											"_parent": {
+												"$ref": "AAAAAAF+KZUinOgSrYc="
+											},
+											"name": "המסלול המקורי",
+											"source": {
+												"$ref": "AAAAAAF+KZUinOgSrYc="
+											},
+											"target": {
+												"$ref": "AAAAAAF+KYb5B+dxAjk="
+											}
+										}
+									]
+								}
+							]
 						}
 					]
 				},
 				{
 					"_type": "FCFlowchart",
-					"_id": "AAAAAAF+KYb5B+dTHOE=",
+					"_id": "AAAAAAF+LpmOTPEd5GE=",
 					"_parent": {
 						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
 					},
-					"name": "System alt function",
+					"name": "study period",
 					"ownedElements": [
 						{
 							"_type": "FCFlowchartDiagram",
-							"_id": "AAAAAAF+KYb5B+dUz3I=",
+							"_id": "AAAAAAF+LpmOTPEedWw=",
 							"_parent": {
-								"$ref": "AAAAAAF+KYb5B+dTHOE="
+								"$ref": "AAAAAAF+LpmOTPEd5GE="
 							},
-							"name": "FlowchartDiagram2",
+							"name": "restudy periodically",
 							"ownedViews": [
 								{
 									"_type": "FCProcessView",
-									"_id": "AAAAAAF+KYb5B+dXtlg=",
+									"_id": "AAAAAAF+LpxRkfEstvM=",
 									"_parent": {
-										"$ref": "AAAAAAF+KYb5B+dUz3I="
+										"$ref": "AAAAAAF+LpmOTPEedWw="
 									},
 									"model": {
-										"$ref": "AAAAAAF+KYb5B+dsNDE="
+										"$ref": "AAAAAAF+LpxRkfEq6QM="
 									},
 									"subViews": [
 										{
 											"_type": "LabelView",
-											"_id": "AAAAAAF+KYb5B+dYBC8=",
+											"_id": "AAAAAAF+LpxRkfEtfvo=",
 											"_parent": {
-												"$ref": "AAAAAAF+KYb5B+dXtlg="
+												"$ref": "AAAAAAF+LpxRkfEstvM="
 											},
 											"font": "Arial;13;0",
-											"left": 746,
-											"top": 226,
-											"width": 212,
-											"height": 26,
-											"text": "מודל לעיבוד הנתונים לפורמט קריא על ידי המכונה הלומדת",
+											"left": 906,
+											"top": 138,
+											"width": 196,
+											"height": 13,
+											"text": "התחלה: טעינת נתונים מהשרת",
 											"wordWrap": true
 										}
 									],
 									"font": "Arial;13;0",
-									"left": 736,
-									"top": 216,
-									"width": 232,
-									"height": 104,
+									"left": 896,
+									"top": 128,
+									"width": 216,
+									"height": 80,
 									"nameLabel": {
-										"$ref": "AAAAAAF+KYb5B+dYBC8="
-									}
-								},
-								{
-									"_type": "FCDatabaseView",
-									"_id": "AAAAAAF+KYb5B+dZj4o=",
-									"_parent": {
-										"$ref": "AAAAAAF+KYb5B+dUz3I="
-									},
-									"model": {
-										"$ref": "AAAAAAF+KYb5B+duMDU="
-									},
-									"subViews": [
-										{
-											"_type": "LabelView",
-											"_id": "AAAAAAF+KYb5B+daVjc=",
-											"_parent": {
-												"$ref": "AAAAAAF+KYb5B+dZj4o="
-											},
-											"font": "Arial;13;0",
-											"left": 322,
-											"top": 84,
-											"width": 100,
-											"height": 65,
-											"text": "מסד הנתונים",
-											"wordWrap": true
-										}
-									],
-									"font": "Arial;13;0",
-									"left": 312,
-									"top": 40,
-									"width": 120,
-									"height": 136,
-									"nameLabel": {
-										"$ref": "AAAAAAF+KYb5B+daVjc="
+										"$ref": "AAAAAAF+LpxRkfEtfvo="
 									}
 								},
 								{
 									"_type": "FCProcessView",
-									"_id": "AAAAAAF+KYb5B+dfPc4=",
+									"_id": "AAAAAAF+LpzzcPE2RnI=",
 									"_parent": {
-										"$ref": "AAAAAAF+KYb5B+dUz3I="
+										"$ref": "AAAAAAF+LpmOTPEedWw="
 									},
 									"model": {
-										"$ref": "AAAAAAF+KYb5B+dvOoE="
+										"$ref": "AAAAAAF+LpzzcPE02IQ="
 									},
 									"subViews": [
 										{
 											"_type": "LabelView",
-											"_id": "AAAAAAF+KYb5B+dgQIw=",
+											"_id": "AAAAAAF+LpzzcPE342s=",
 											"_parent": {
-												"$ref": "AAAAAAF+KYb5B+dfPc4="
+												"$ref": "AAAAAAF+LpzzcPE2RnI="
 											},
 											"font": "Arial;13;0",
-											"left": 290,
-											"top": 266,
-											"width": 212,
-											"height": 13,
-											"text": "מכונה לומדת לטובת סיווג הגוף",
-											"wordWrap": true
-										}
-									],
-									"font": "Arial;13;0",
-									"left": 280,
-									"top": 256,
-									"width": 232,
-									"height": 104,
-									"nameLabel": {
-										"$ref": "AAAAAAF+KYb5B+dgQIw="
-									}
-								},
-								{
-									"_type": "FCFlowView",
-									"_id": "AAAAAAF+KYb5B+dh2r4=",
-									"_parent": {
-										"$ref": "AAAAAAF+KYb5B+dUz3I="
-									},
-									"model": {
-										"$ref": "AAAAAAF+KYb5B+dtrNY="
-									},
-									"subViews": [
-										{
-											"_type": "EdgeLabelView",
-											"_id": "AAAAAAF+KYb5B+di/m4=",
-											"_parent": {
-												"$ref": "AAAAAAF+KYb5B+dh2r4="
-											},
-											"model": {
-												"$ref": "AAAAAAF+KYb5B+dtrNY="
-											},
-											"font": "Arial;13;0",
-											"left": 569,
-											"top": 287,
-											"width": 107.71337890625,
+											"left": 906,
+											"top": 258,
+											"width": 197,
 											"height": 26,
-											"alpha": 1.5707958506044204,
-											"distance": 21,
-											"hostEdge": {
-												"$ref": "AAAAAAF+KYb5B+dh2r4="
-											},
-											"edgePosition": 1,
-											"text": "פורמט קריא למכונה",
+											"text": "חלוקת הנתונים למחלקות אימון ומחלקות בדיקה באופן אקראי",
 											"wordWrap": true
 										}
 									],
 									"font": "Arial;13;0",
-									"head": {
-										"$ref": "AAAAAAF+KYb5B+dfPc4="
-									},
-									"tail": {
-										"$ref": "AAAAAAF+KYb5B+dXtlg="
-									},
-									"lineStyle": 2,
-									"points": "736:280;511:280",
+									"left": 896,
+									"top": 248,
+									"width": 217,
+									"height": 81,
 									"nameLabel": {
-										"$ref": "AAAAAAF+KYb5B+di/m4="
-									}
-								},
-								{
-									"_type": "FCProcessView",
-									"_id": "AAAAAAF+KYb5B+djA0U=",
-									"_parent": {
-										"$ref": "AAAAAAF+KYb5B+dUz3I="
-									},
-									"model": {
-										"$ref": "AAAAAAF+KYb5B+dxAjk="
-									},
-									"subViews": [
-										{
-											"_type": "LabelView",
-											"_id": "AAAAAAF+KYb5B+dkRZ4=",
-											"_parent": {
-												"$ref": "AAAAAAF+KYb5B+djA0U="
-											},
-											"font": "Arial;13;0",
-											"left": 266,
-											"top": 426,
-											"width": 212,
-											"height": 26,
-											"text": "מודל להכנסת הדאטה למסד הנתונים בתוספת הסיווג",
-											"wordWrap": true
-										}
-									],
-									"font": "Arial;13;0",
-									"left": 256,
-									"top": 416,
-									"width": 232,
-									"height": 88,
-									"nameLabel": {
-										"$ref": "AAAAAAF+KYb5B+dkRZ4="
+										"$ref": "AAAAAAF+LpzzcPE342s="
 									}
 								},
 								{
 									"_type": "FCFlowView",
-									"_id": "AAAAAAF+KYb5B+dlF68=",
+									"_id": "AAAAAAF+Lp7V2fFGRDI=",
 									"_parent": {
-										"$ref": "AAAAAAF+KYb5B+dUz3I="
+										"$ref": "AAAAAAF+LpmOTPEedWw="
 									},
 									"model": {
-										"$ref": "AAAAAAF+KYb5B+dwGEc="
+										"$ref": "AAAAAAF+Lp7V2PFEjS4="
 									},
 									"subViews": [
 										{
 											"_type": "EdgeLabelView",
-											"_id": "AAAAAAF+KYb5B+dm4qY=",
+											"_id": "AAAAAAF+Lp7V2fFHdvk=",
 											"_parent": {
-												"$ref": "AAAAAAF+KYb5B+dlF68="
+												"$ref": "AAAAAAF+Lp7V2fFGRDI="
 											},
 											"model": {
-												"$ref": "AAAAAAF+KYb5B+dwGEc="
-											},
-											"font": "Arial;13;0",
-											"left": 767,
-											"top": 343,
-											"width": 88.7783203125,
-											"height": 13,
-											"alpha": -2.2782280687904457,
-											"distance": 90.78546139112804,
-											"hostEdge": {
-												"$ref": "AAAAAAF+KYb5B+dlF68="
-											},
-											"edgePosition": 1,
-											"text": "סיווג המסלול"
-										}
-									],
-									"font": "Arial;13;0",
-									"head": {
-										"$ref": "AAAAAAF+KYb5B+djA0U="
-									},
-									"tail": {
-										"$ref": "AAAAAAF+KYb5B+dfPc4="
-									},
-									"lineStyle": 2,
-									"points": "511:339;880:339;880:480;487:480",
-									"nameLabel": {
-										"$ref": "AAAAAAF+KYb5B+dm4qY="
-									}
-								},
-								{
-									"_type": "FCFlowView",
-									"_id": "AAAAAAF+KYb5B+dny3Q=",
-									"_parent": {
-										"$ref": "AAAAAAF+KYb5B+dUz3I="
-									},
-									"model": {
-										"$ref": "AAAAAAF+KYb5B+dyswE="
-									},
-									"subViews": [
-										{
-											"_type": "EdgeLabelView",
-											"_id": "AAAAAAF+KYb5B+dotio=",
-											"_parent": {
-												"$ref": "AAAAAAF+KYb5B+dny3Q="
-											},
-											"model": {
-												"$ref": "AAAAAAF+KYb5B+dyswE="
+												"$ref": "AAAAAAF+Lp7V2PFEjS4="
 											},
 											"visible": false,
 											"font": "Arial;13;0",
-											"left": 176,
-											"top": 179,
+											"left": 1017,
+											"top": 220,
 											"height": 13,
 											"alpha": 1.5707963267948966,
 											"distance": 15,
 											"hostEdge": {
-												"$ref": "AAAAAAF+KYb5B+dny3Q="
+												"$ref": "AAAAAAF+Lp7V2fFGRDI="
 											},
 											"edgePosition": 1
 										}
 									],
 									"font": "Arial;13;0",
 									"head": {
-										"$ref": "AAAAAAF+KYb5B+dZj4o="
+										"$ref": "AAAAAAF+LpzzcPE2RnI="
 									},
 									"tail": {
-										"$ref": "AAAAAAF+KYb5B+djA0U="
+										"$ref": "AAAAAAF+LpxRkfEstvM="
 									},
 									"lineStyle": 2,
-									"points": "256:464;176:464;176:200;368:200;368:175",
+									"points": "1003:207;1003:248",
 									"nameLabel": {
-										"$ref": "AAAAAAF+KYb5B+dotio="
+										"$ref": "AAAAAAF+Lp7V2fFHdvk="
 									}
 								},
 								{
 									"_type": "FCProcessView",
-									"_id": "AAAAAAF+KY3Pceew4ZI=",
+									"_id": "AAAAAAF+Lqjrm/FQXZY=",
 									"_parent": {
-										"$ref": "AAAAAAF+KYb5B+dUz3I="
+										"$ref": "AAAAAAF+LpmOTPEedWw="
 									},
 									"model": {
-										"$ref": "AAAAAAF+KY3Pceeu7Yk="
+										"$ref": "AAAAAAF+Lqjrm/FOd3U="
 									},
 									"subViews": [
 										{
 											"_type": "LabelView",
-											"_id": "AAAAAAF+KY3Pceex2DQ=",
+											"_id": "AAAAAAF+Lqjrm/FRAGM=",
 											"_parent": {
-												"$ref": "AAAAAAF+KY3Pceew4ZI="
+												"$ref": "AAAAAAF+Lqjrm/FQXZY="
 											},
 											"font": "Arial;13;0",
-											"left": 834,
-											"top": 90,
-											"width": 132,
+											"left": 906,
+											"top": 378,
+											"width": 196,
 											"height": 26,
-											"text": "בדיקה: האם בפורמט המתאים כבר לסיווג?",
+											"text": "חלוקת מחלקות האימון למקבצים לטובת למידה",
 											"wordWrap": true
 										}
 									],
 									"font": "Arial;13;0",
-									"left": 824,
-									"top": 80,
-									"width": 152,
-									"height": 88,
+									"left": 896,
+									"top": 368,
+									"width": 216,
+									"height": 81,
 									"nameLabel": {
-										"$ref": "AAAAAAF+KY3Pceex2DQ="
+										"$ref": "AAAAAAF+Lqjrm/FRAGM="
 									}
 								},
 								{
 									"_type": "FCFlowView",
-									"_id": "AAAAAAF+KY40QOe40os=",
+									"_id": "AAAAAAF+Lqm1W/FcOg4=",
 									"_parent": {
-										"$ref": "AAAAAAF+KYb5B+dUz3I="
+										"$ref": "AAAAAAF+LpmOTPEedWw="
 									},
 									"model": {
-										"$ref": "AAAAAAF+KY40QOe27jM="
+										"$ref": "AAAAAAF+Lqm1WvFa6Qk="
 									},
 									"subViews": [
 										{
 											"_type": "EdgeLabelView",
-											"_id": "AAAAAAF+KY40QOe57/E=",
+											"_id": "AAAAAAF+Lqm1W/FdsSs=",
 											"_parent": {
-												"$ref": "AAAAAAF+KY40QOe40os="
+												"$ref": "AAAAAAF+Lqm1W/FcOg4="
 											},
 											"model": {
-												"$ref": "AAAAAAF+KY40QOe27jM="
+												"$ref": "AAAAAAF+Lqm1WvFa6Qk="
 											},
+											"visible": false,
 											"font": "Arial;13;0",
-											"left": 495,
-											"top": 70,
-											"width": 116,
-											"height": 39,
-											"alpha": -3.526750207004716,
-											"distance": 79.84985911070852,
+											"left": 1017,
+											"top": 341,
+											"height": 13,
+											"alpha": 1.5707963267948966,
+											"distance": 15,
 											"hostEdge": {
-												"$ref": "AAAAAAF+KY40QOe40os="
+												"$ref": "AAAAAAF+Lqm1W/FcOg4="
 											},
-											"edgePosition": 1,
-											"text": "התחלה:  משיכת מסלולים לא מסווגים מהמסד לטובת סיווג",
-											"wordWrap": true
+											"edgePosition": 1
 										}
 									],
 									"font": "Arial;13;0",
 									"head": {
-										"$ref": "AAAAAAF+KY3Pceew4ZI="
+										"$ref": "AAAAAAF+Lqjrm/FQXZY="
 									},
 									"tail": {
-										"$ref": "AAAAAAF+KYb5B+dZj4o="
+										"$ref": "AAAAAAF+LpzzcPE2RnI="
 									},
 									"lineStyle": 2,
-									"points": "431:120;824:120",
+									"points": "1003:328;1003:368",
 									"nameLabel": {
-										"$ref": "AAAAAAF+KY40QOe57/E="
+										"$ref": "AAAAAAF+Lqm1W/FdsSs="
 									}
 								},
 								{
 									"_type": "FCProcessView",
-									"_id": "AAAAAAF+KZHSS+fb4VY=",
+									"_id": "AAAAAAF+LqnagvFlnec=",
 									"_parent": {
-										"$ref": "AAAAAAF+KYb5B+dUz3I="
+										"$ref": "AAAAAAF+LpmOTPEedWw="
 									},
 									"model": {
-										"$ref": "AAAAAAF+KZHSSufZkZU="
+										"$ref": "AAAAAAF+LqnagvFjCPU="
 									},
 									"subViews": [
 										{
 											"_type": "LabelView",
-											"_id": "AAAAAAF+KZHSS+fcFcw=",
+											"_id": "AAAAAAF+LqnagvFm2pk=",
 											"_parent": {
-												"$ref": "AAAAAAF+KZHSS+fb4VY="
+												"$ref": "AAAAAAF+LqnagvFlnec="
 											},
 											"font": "Arial;13;0",
-											"left": 1058,
-											"top": 322,
-											"width": 196,
+											"left": 634,
+											"top": 138,
+											"width": 189,
 											"height": 26,
-											"text": "שליחת המסלול לפח המחזור וקביעת תאריך מחיקתו מהמסד",
+											"text": "למידה על המקבצים ותיקון משקולות",
 											"wordWrap": true
 										}
 									],
 									"font": "Arial;13;0",
-									"left": 1048,
-									"top": 312,
-									"width": 216,
-									"height": 88,
+									"left": 624,
+									"top": 128,
+									"width": 209,
+									"height": 81,
 									"nameLabel": {
-										"$ref": "AAAAAAF+KZHSS+fcFcw="
+										"$ref": "AAAAAAF+LqnagvFm2pk="
 									}
 								},
 								{
 									"_type": "FCFlowView",
-									"_id": "AAAAAAF+KZPX0ufyyDY=",
+									"_id": "AAAAAAF+Lqts8PF/SQI=",
 									"_parent": {
-										"$ref": "AAAAAAF+KYb5B+dUz3I="
+										"$ref": "AAAAAAF+LpmOTPEedWw="
 									},
 									"model": {
-										"$ref": "AAAAAAF+KZPX0efwc6w="
+										"$ref": "AAAAAAF+Lqts7/F9V4c="
 									},
 									"subViews": [
 										{
 											"_type": "EdgeLabelView",
-											"_id": "AAAAAAF+KZPX0ufzAeo=",
+											"_id": "AAAAAAF+Lqts8PGAL8I=",
 											"_parent": {
-												"$ref": "AAAAAAF+KZPX0ufyyDY="
+												"$ref": "AAAAAAF+Lqts8PF/SQI="
 											},
 											"model": {
-												"$ref": "AAAAAAF+KZPX0efwc6w="
+												"$ref": "AAAAAAF+Lqts7/F9V4c="
+											},
+											"visible": false,
+											"font": "Arial;13;0",
+											"left": 849,
+											"top": 281,
+											"height": 13,
+											"alpha": 1.5707963267948966,
+											"distance": 15,
+											"hostEdge": {
+												"$ref": "AAAAAAF+Lqts8PF/SQI="
+											},
+											"edgePosition": 1
+										}
+									],
+									"font": "Arial;13;0",
+									"head": {
+										"$ref": "AAAAAAF+LqnagvFlnec="
+									},
+									"tail": {
+										"$ref": "AAAAAAF+Lqjrm/FQXZY="
+									},
+									"lineStyle": 2,
+									"points": "896:408;864:408;864:168;832:168",
+									"nameLabel": {
+										"$ref": "AAAAAAF+Lqts8PGAL8I="
+									}
+								},
+								{
+									"_type": "FCProcessView",
+									"_id": "AAAAAAF+LqvHM/GIFoQ=",
+									"_parent": {
+										"$ref": "AAAAAAF+LpmOTPEedWw="
+									},
+									"model": {
+										"$ref": "AAAAAAF+LqvHM/GGKOM="
+									},
+									"subViews": [
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAF+LqvHM/GJnXo=",
+											"_parent": {
+												"$ref": "AAAAAAF+LqvHM/GIFoQ="
 											},
 											"font": "Arial;13;0",
-											"left": 611,
-											"top": 193,
+											"left": 634,
+											"top": 258,
+											"width": 189,
+											"height": 39,
+											"text": "למידה עם מחלקות הבדיקה: האם הגענו לדיוק מספק (ייקבע מראש ע\"י מנהל המערכת)?",
+											"wordWrap": true
+										}
+									],
+									"font": "Arial;13;0",
+									"left": 624,
+									"top": 248,
+									"width": 209,
+									"height": 81,
+									"nameLabel": {
+										"$ref": "AAAAAAF+LqvHM/GJnXo="
+									}
+								},
+								{
+									"_type": "FCFlowView",
+									"_id": "AAAAAAF+Lqy0ivGqWMg=",
+									"_parent": {
+										"$ref": "AAAAAAF+LpmOTPEedWw="
+									},
+									"model": {
+										"$ref": "AAAAAAF+Lqy0ivGoRL8="
+									},
+									"subViews": [
+										{
+											"_type": "EdgeLabelView",
+											"_id": "AAAAAAF+Lqy0ivGrwCY=",
+											"_parent": {
+												"$ref": "AAAAAAF+Lqy0ivGqWMg="
+											},
+											"model": {
+												"$ref": "AAAAAAF+Lqy0ivGoRL8="
+											},
+											"visible": false,
+											"font": "Arial;13;0",
+											"left": 734,
+											"top": 221,
+											"height": 13,
+											"alpha": 1.5707963267948966,
+											"distance": 15,
+											"hostEdge": {
+												"$ref": "AAAAAAF+Lqy0ivGqWMg="
+											},
+											"edgePosition": 1
+										}
+									],
+									"font": "Arial;13;0",
+									"head": {
+										"$ref": "AAAAAAF+LqvHM/GIFoQ="
+									},
+									"tail": {
+										"$ref": "AAAAAAF+LqnagvFlnec="
+									},
+									"lineStyle": 2,
+									"points": "720:208;720:248",
+									"nameLabel": {
+										"$ref": "AAAAAAF+Lqy0ivGrwCY="
+									}
+								},
+								{
+									"_type": "FCProcessView",
+									"_id": "AAAAAAF+Lq7g4/HDuSw=",
+									"_parent": {
+										"$ref": "AAAAAAF+LpmOTPEedWw="
+									},
+									"model": {
+										"$ref": "AAAAAAF+Lq7g4vHBs4s="
+									},
+									"subViews": [
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAF+Lq7g4/HE6Ko=",
+											"_parent": {
+												"$ref": "AAAAAAF+Lq7g4/HDuSw="
+											},
+											"font": "Arial;13;0",
+											"left": 634,
+											"top": 378,
+											"width": 188,
+											"height": 26,
+											"text": "שמירת משקולות וסיום תהליך הלמידה",
+											"wordWrap": true
+										}
+									],
+									"font": "Arial;13;0",
+									"left": 624,
+									"top": 368,
+									"width": 208,
+									"height": 81,
+									"nameLabel": {
+										"$ref": "AAAAAAF+Lq7g4/HE6Ko="
+									}
+								},
+								{
+									"_type": "FCFlowView",
+									"_id": "AAAAAAF+Lq+RyPHQipM=",
+									"_parent": {
+										"$ref": "AAAAAAF+LpmOTPEedWw="
+									},
+									"model": {
+										"$ref": "AAAAAAF+Lq+Rx/HOodg="
+									},
+									"subViews": [
+										{
+											"_type": "EdgeLabelView",
+											"_id": "AAAAAAF+Lq+RyPHR/20=",
+											"_parent": {
+												"$ref": "AAAAAAF+Lq+RyPHQipM="
+											},
+											"model": {
+												"$ref": "AAAAAAF+Lq+Rx/HOodg="
+											},
+											"font": "Arial;13;0",
+											"left": 744,
+											"top": 341,
 											"width": 10.20068359375,
 											"height": 13,
 											"alpha": 1.5707963267948966,
 											"distance": 15,
 											"hostEdge": {
-												"$ref": "AAAAAAF+KZPX0ufyyDY="
+												"$ref": "AAAAAAF+Lq+RyPHQipM="
 											},
 											"edgePosition": 1,
 											"text": "כן"
@@ -995,426 +1856,301 @@
 									],
 									"font": "Arial;13;0",
 									"head": {
-										"$ref": "AAAAAAF+KYb5B+dfPc4="
+										"$ref": "AAAAAAF+Lq7g4/HDuSw="
 									},
 									"tail": {
-										"$ref": "AAAAAAF+KY3Pceew4ZI="
+										"$ref": "AAAAAAF+LqvHM/GIFoQ="
 									},
 									"lineStyle": 2,
-									"points": "840:167;840:184;395:184;395:256",
+									"points": "735:328;735:368",
 									"nameLabel": {
-										"$ref": "AAAAAAF+KZPX0ufzAeo="
+										"$ref": "AAAAAAF+Lq+RyPHR/20="
+									}
+								},
+								{
+									"_type": "FCFlowView",
+									"_id": "AAAAAAF+LrDckPHl2cY=",
+									"_parent": {
+										"$ref": "AAAAAAF+LpmOTPEedWw="
+									},
+									"model": {
+										"$ref": "AAAAAAF+LrDcj/HjYHU="
+									},
+									"subViews": [
+										{
+											"_type": "EdgeLabelView",
+											"_id": "AAAAAAF+LrDckPHmA74=",
+											"_parent": {
+												"$ref": "AAAAAAF+LrDckPHl2cY="
+											},
+											"model": {
+												"$ref": "AAAAAAF+LrDcj/HjYHU="
+											},
+											"font": "Arial;13;0",
+											"left": 528,
+											"top": 396,
+											"width": 15.05029296875,
+											"height": 13,
+											"alpha": -2.3561948649552398,
+											"distance": 24.041630560342615,
+											"hostEdge": {
+												"$ref": "AAAAAAF+LrDckPHl2cY="
+											},
+											"edgePosition": 1,
+											"text": "לא"
+										}
+									],
+									"font": "Arial;13;0",
+									"head": {
+										"$ref": "AAAAAAF+LrLMPfHw/mI="
+									},
+									"tail": {
+										"$ref": "AAAAAAF+LqvHM/GIFoQ="
+									},
+									"lineStyle": 2,
+									"points": "624:288;552:288;552:552;896:552",
+									"nameLabel": {
+										"$ref": "AAAAAAF+LrDckPHmA74="
 									}
 								},
 								{
 									"_type": "FCProcessView",
-									"_id": "AAAAAAF+KZUinOgUHyQ=",
+									"_id": "AAAAAAF+LrLMPfHw/mI=",
 									"_parent": {
-										"$ref": "AAAAAAF+KYb5B+dUz3I="
+										"$ref": "AAAAAAF+LpmOTPEedWw="
 									},
 									"model": {
-										"$ref": "AAAAAAF+KZUinOgSrYc="
+										"$ref": "AAAAAAF+LrLMPfHuHF4="
 									},
 									"subViews": [
 										{
 											"_type": "LabelView",
-											"_id": "AAAAAAF+KZUinOgVEFM=",
+											"_id": "AAAAAAF+LrLMPfHx5hg=",
 											"_parent": {
-												"$ref": "AAAAAAF+KZUinOgUHyQ="
+												"$ref": "AAAAAAF+LrLMPfHw/mI="
 											},
 											"font": "Arial;13;0",
-											"left": 1010,
-											"top": 154,
-											"width": 197,
-											"height": 26,
-											"text": "האם ניתן לעבד את המסלול לפורמט קריא?",
+											"left": 906,
+											"top": 522,
+											"width": 196,
+											"height": 39,
+											"text": "ערבוב הנתונים וחלוקה מחדש למחלקות אימון ובדיקה, הגדלת מספר האיטרציות בלמידה פי 2",
 											"wordWrap": true
 										}
 									],
 									"font": "Arial;13;0",
-									"left": 1000,
-									"top": 144,
-									"width": 217,
-									"height": 96,
+									"left": 896,
+									"top": 512,
+									"width": 216,
+									"height": 81,
 									"nameLabel": {
-										"$ref": "AAAAAAF+KZUinOgVEFM="
+										"$ref": "AAAAAAF+LrLMPfHx5hg="
 									}
 								},
 								{
 									"_type": "FCFlowView",
-									"_id": "AAAAAAF+KZZ2ROgmeww=",
+									"_id": "AAAAAAF+LrTAFPIB8hw=",
 									"_parent": {
-										"$ref": "AAAAAAF+KYb5B+dUz3I="
+										"$ref": "AAAAAAF+LpmOTPEedWw="
 									},
 									"model": {
-										"$ref": "AAAAAAF+KZZ2Q+gkrxg="
+										"$ref": "AAAAAAF+LrTAFPH/pL4="
 									},
 									"subViews": [
 										{
 											"_type": "EdgeLabelView",
-											"_id": "AAAAAAF+KZZ2ROgnFAw=",
+											"_id": "AAAAAAF+LrTAFfICbQM=",
 											"_parent": {
-												"$ref": "AAAAAAF+KZZ2ROgmeww="
+												"$ref": "AAAAAAF+LrTAFPIB8hw="
 											},
 											"model": {
-												"$ref": "AAAAAAF+KZZ2Q+gkrxg="
+												"$ref": "AAAAAAF+LrTAFPH/pL4="
 											},
+											"visible": false,
 											"font": "Arial;13;0",
-											"left": 1056,
-											"top": 95,
-											"width": 15.05029296875,
+											"left": 988,
+											"top": 473,
 											"height": 13,
-											"alpha": -1.6936318306855542,
-											"distance": 81.61494961096282,
+											"alpha": 1.5707963267948966,
+											"distance": 15,
 											"hostEdge": {
-												"$ref": "AAAAAAF+KZZ2ROgmeww="
+												"$ref": "AAAAAAF+LrTAFPIB8hw="
 											},
-											"edgePosition": 1,
-											"text": "לא"
+											"edgePosition": 1
 										}
 									],
 									"font": "Arial;13;0",
 									"head": {
-										"$ref": "AAAAAAF+KZUinOgUHyQ="
+										"$ref": "AAAAAAF+Lqjrm/FQXZY="
 									},
 									"tail": {
-										"$ref": "AAAAAAF+KY3Pceew4ZI="
+										"$ref": "AAAAAAF+LrLMPfHw/mI="
 									},
 									"lineStyle": 2,
-									"points": "975:112;1144:112;1144:144",
+									"points": "1003:512;1003:448",
 									"nameLabel": {
-										"$ref": "AAAAAAF+KZZ2ROgnFAw="
-									}
-								},
-								{
-									"_type": "FCFlowView",
-									"_id": "AAAAAAF+KZcFReg4//k=",
-									"_parent": {
-										"$ref": "AAAAAAF+KYb5B+dUz3I="
-									},
-									"model": {
-										"$ref": "AAAAAAF+KZcFReg29Xo="
-									},
-									"subViews": [
-										{
-											"_type": "EdgeLabelView",
-											"_id": "AAAAAAF+KZcFReg5KAQ=",
-											"_parent": {
-												"$ref": "AAAAAAF+KZcFReg4//k="
-											},
-											"model": {
-												"$ref": "AAAAAAF+KZcFReg29Xo="
-											},
-											"font": "Arial;13;0",
-											"left": 1026,
-											"top": 271,
-											"width": 18,
-											"height": 13,
-											"alpha": 2.2367660058142316,
-											"distance": 17.804493814764857,
-											"hostEdge": {
-												"$ref": "AAAAAAF+KZcFReg4//k="
-											},
-											"edgePosition": 1,
-											"text": "כן"
-										}
-									],
-									"font": "Arial;13;0",
-									"head": {
-										"$ref": "AAAAAAF+KYb5B+dXtlg="
-									},
-									"tail": {
-										"$ref": "AAAAAAF+KZUinOgUHyQ="
-									},
-									"lineStyle": 2,
-									"points": "1024:239;1024:264;967:264",
-									"nameLabel": {
-										"$ref": "AAAAAAF+KZcFReg5KAQ="
-									}
-								},
-								{
-									"_type": "FCFlowView",
-									"_id": "AAAAAAF+KZc9FOhFewg=",
-									"_parent": {
-										"$ref": "AAAAAAF+KYb5B+dUz3I="
-									},
-									"model": {
-										"$ref": "AAAAAAF+KZc9FOhDQds="
-									},
-									"subViews": [
-										{
-											"_type": "EdgeLabelView",
-											"_id": "AAAAAAF+KZc9FOhGULI=",
-											"_parent": {
-												"$ref": "AAAAAAF+KZc9FOhFewg="
-											},
-											"model": {
-												"$ref": "AAAAAAF+KZc9FOhDQds="
-											},
-											"font": "Arial;13;0",
-											"left": 1166,
-											"top": 272,
-											"width": 15.05029296875,
-											"height": 13,
-											"alpha": 1.3597028696432434,
-											"distance": 14.317821063276353,
-											"hostEdge": {
-												"$ref": "AAAAAAF+KZc9FOhFewg="
-											},
-											"edgePosition": 1,
-											"text": "לא"
-										}
-									],
-									"font": "Arial;13;0",
-									"head": {
-										"$ref": "AAAAAAF+KZHSS+fb4VY="
-									},
-									"tail": {
-										"$ref": "AAAAAAF+KZUinOgUHyQ="
-									},
-									"lineStyle": 2,
-									"points": "1160:239;1160:312",
-									"nameLabel": {
-										"$ref": "AAAAAAF+KZc9FOhGULI="
-									}
-								},
-								{
-									"_type": "FCFlowView",
-									"_id": "AAAAAAF+KZgcUehRjLg=",
-									"_parent": {
-										"$ref": "AAAAAAF+KYb5B+dUz3I="
-									},
-									"model": {
-										"$ref": "AAAAAAF+KZgcT+hPAj0="
-									},
-									"subViews": [
-										{
-											"_type": "EdgeLabelView",
-											"_id": "AAAAAAF+KZgcUehS1A4=",
-											"_parent": {
-												"$ref": "AAAAAAF+KZgcUehRjLg="
-											},
-											"model": {
-												"$ref": "AAAAAAF+KZgcT+hPAj0="
-											},
-											"font": "Arial;13;0",
-											"left": 775,
-											"top": 415,
-											"width": 84.8681640625,
-											"height": 13,
-											"alpha": -0.08673834284525794,
-											"distance": 207.78113485107352,
-											"hostEdge": {
-												"$ref": "AAAAAAF+KZgcUehRjLg="
-											},
-											"edgePosition": 1,
-											"text": "המסלול המקורי"
-										}
-									],
-									"font": "Arial;13;0",
-									"head": {
-										"$ref": "AAAAAAF+KYb5B+djA0U="
-									},
-									"tail": {
-										"$ref": "AAAAAAF+KZUinOgUHyQ="
-									},
-									"lineStyle": 2,
-									"points": "1024:239;1024:440;487:440",
-									"nameLabel": {
-										"$ref": "AAAAAAF+KZgcUehS1A4="
+										"$ref": "AAAAAAF+LrTAFfICbQM="
 									}
 								}
 							]
 						},
 						{
 							"_type": "FCProcess",
-							"_id": "AAAAAAF+KYb5B+dsNDE=",
+							"_id": "AAAAAAF+LpxRkfEq6QM=",
 							"_parent": {
-								"$ref": "AAAAAAF+KYb5B+dTHOE="
+								"$ref": "AAAAAAF+LpmOTPEd5GE="
 							},
-							"name": "מודל לעיבוד הנתונים לפורמט קריא על ידי המכונה הלומדת",
+							"name": "התחלה: טעינת נתונים מהשרת",
 							"ownedElements": [
 								{
 									"_type": "FCFlow",
-									"_id": "AAAAAAF+KYb5B+dtrNY=",
+									"_id": "AAAAAAF+Lp7V2PFEjS4=",
 									"_parent": {
-										"$ref": "AAAAAAF+KYb5B+dsNDE="
+										"$ref": "AAAAAAF+LpxRkfEq6QM="
 									},
-									"name": "פורמט קריא למכונה",
 									"source": {
-										"$ref": "AAAAAAF+KYb5B+dsNDE="
+										"$ref": "AAAAAAF+LpxRkfEq6QM="
 									},
 									"target": {
-										"$ref": "AAAAAAF+KYb5B+dvOoE="
-									}
-								}
-							]
-						},
-						{
-							"_type": "FCDatabase",
-							"_id": "AAAAAAF+KYb5B+duMDU=",
-							"_parent": {
-								"$ref": "AAAAAAF+KYb5B+dTHOE="
-							},
-							"name": "מסד הנתונים",
-							"ownedElements": [
-								{
-									"_type": "FCFlow",
-									"_id": "AAAAAAF+KY40QOe27jM=",
-									"_parent": {
-										"$ref": "AAAAAAF+KYb5B+duMDU="
-									},
-									"name": "התחלה:  משיכת מסלולים לא מסווגים מהמסד לטובת סיווג",
-									"source": {
-										"$ref": "AAAAAAF+KYb5B+duMDU="
-									},
-									"target": {
-										"$ref": "AAAAAAF+KY3Pceeu7Yk="
+										"$ref": "AAAAAAF+LpzzcPE02IQ="
 									}
 								}
 							]
 						},
 						{
 							"_type": "FCProcess",
-							"_id": "AAAAAAF+KYb5B+dvOoE=",
+							"_id": "AAAAAAF+LpzzcPE02IQ=",
 							"_parent": {
-								"$ref": "AAAAAAF+KYb5B+dTHOE="
+								"$ref": "AAAAAAF+LpmOTPEd5GE="
 							},
-							"name": "מכונה לומדת לטובת סיווג הגוף",
+							"name": "חלוקת הנתונים למחלקות אימון ומחלקות בדיקה באופן אקראי",
 							"ownedElements": [
 								{
 									"_type": "FCFlow",
-									"_id": "AAAAAAF+KYb5B+dwGEc=",
+									"_id": "AAAAAAF+Lqm1WvFa6Qk=",
 									"_parent": {
-										"$ref": "AAAAAAF+KYb5B+dvOoE="
+										"$ref": "AAAAAAF+LpzzcPE02IQ="
 									},
-									"name": "סיווג המסלול",
 									"source": {
-										"$ref": "AAAAAAF+KYb5B+dvOoE="
+										"$ref": "AAAAAAF+LpzzcPE02IQ="
 									},
 									"target": {
-										"$ref": "AAAAAAF+KYb5B+dxAjk="
+										"$ref": "AAAAAAF+Lqjrm/FOd3U="
 									}
 								}
 							]
 						},
 						{
 							"_type": "FCProcess",
-							"_id": "AAAAAAF+KYb5B+dxAjk=",
+							"_id": "AAAAAAF+Lqjrm/FOd3U=",
 							"_parent": {
-								"$ref": "AAAAAAF+KYb5B+dTHOE="
+								"$ref": "AAAAAAF+LpmOTPEd5GE="
 							},
-							"name": "מודל להכנסת הדאטה למסד הנתונים בתוספת הסיווג",
+							"name": "חלוקת מחלקות האימון למקבצים לטובת למידה",
 							"ownedElements": [
 								{
 									"_type": "FCFlow",
-									"_id": "AAAAAAF+KYb5B+dyswE=",
+									"_id": "AAAAAAF+Lqts7/F9V4c=",
 									"_parent": {
-										"$ref": "AAAAAAF+KYb5B+dxAjk="
+										"$ref": "AAAAAAF+Lqjrm/FOd3U="
 									},
 									"source": {
-										"$ref": "AAAAAAF+KYb5B+dxAjk="
+										"$ref": "AAAAAAF+Lqjrm/FOd3U="
 									},
 									"target": {
-										"$ref": "AAAAAAF+KYb5B+duMDU="
+										"$ref": "AAAAAAF+LqnagvFjCPU="
 									}
 								}
 							]
 						},
 						{
 							"_type": "FCProcess",
-							"_id": "AAAAAAF+KY3Pceeu7Yk=",
+							"_id": "AAAAAAF+LqnagvFjCPU=",
 							"_parent": {
-								"$ref": "AAAAAAF+KYb5B+dTHOE="
+								"$ref": "AAAAAAF+LpmOTPEd5GE="
 							},
-							"name": "בדיקה: האם בפורמט המתאים כבר לסיווג?",
+							"name": "למידה על המקבצים ותיקון משקולות",
 							"ownedElements": [
 								{
 									"_type": "FCFlow",
-									"_id": "AAAAAAF+KZPX0efwc6w=",
+									"_id": "AAAAAAF+Lqy0ivGoRL8=",
 									"_parent": {
-										"$ref": "AAAAAAF+KY3Pceeu7Yk="
+										"$ref": "AAAAAAF+LqnagvFjCPU="
+									},
+									"source": {
+										"$ref": "AAAAAAF+LqnagvFjCPU="
+									},
+									"target": {
+										"$ref": "AAAAAAF+LqvHM/GGKOM="
+									}
+								}
+							]
+						},
+						{
+							"_type": "FCProcess",
+							"_id": "AAAAAAF+LqvHM/GGKOM=",
+							"_parent": {
+								"$ref": "AAAAAAF+LpmOTPEd5GE="
+							},
+							"name": "למידה עם מחלקות הבדיקה: האם הגענו לדיוק מספק (ייקבע מראש ע\"י מנהל המערכת)?",
+							"ownedElements": [
+								{
+									"_type": "FCFlow",
+									"_id": "AAAAAAF+Lq+Rx/HOodg=",
+									"_parent": {
+										"$ref": "AAAAAAF+LqvHM/GGKOM="
 									},
 									"name": "כן",
 									"source": {
-										"$ref": "AAAAAAF+KY3Pceeu7Yk="
+										"$ref": "AAAAAAF+LqvHM/GGKOM="
 									},
 									"target": {
-										"$ref": "AAAAAAF+KYb5B+dvOoE="
+										"$ref": "AAAAAAF+Lq7g4vHBs4s="
 									}
 								},
 								{
 									"_type": "FCFlow",
-									"_id": "AAAAAAF+KZZ2Q+gkrxg=",
+									"_id": "AAAAAAF+LrDcj/HjYHU=",
 									"_parent": {
-										"$ref": "AAAAAAF+KY3Pceeu7Yk="
+										"$ref": "AAAAAAF+LqvHM/GGKOM="
 									},
 									"name": "לא",
 									"source": {
-										"$ref": "AAAAAAF+KY3Pceeu7Yk="
+										"$ref": "AAAAAAF+LqvHM/GGKOM="
 									},
 									"target": {
-										"$ref": "AAAAAAF+KZUinOgSrYc="
+										"$ref": "AAAAAAF+LrLMPfHuHF4="
 									}
 								}
 							]
 						},
 						{
 							"_type": "FCProcess",
-							"_id": "AAAAAAF+KZHSSufZkZU=",
+							"_id": "AAAAAAF+Lq7g4vHBs4s=",
 							"_parent": {
-								"$ref": "AAAAAAF+KYb5B+dTHOE="
+								"$ref": "AAAAAAF+LpmOTPEd5GE="
 							},
-							"name": "שליחת המסלול לפח המחזור וקביעת תאריך מחיקתו מהמסד"
+							"name": "שמירת משקולות וסיום תהליך הלמידה"
 						},
 						{
 							"_type": "FCProcess",
-							"_id": "AAAAAAF+KZUinOgSrYc=",
+							"_id": "AAAAAAF+LrLMPfHuHF4=",
 							"_parent": {
-								"$ref": "AAAAAAF+KYb5B+dTHOE="
+								"$ref": "AAAAAAF+LpmOTPEd5GE="
 							},
-							"name": "האם ניתן לעבד את המסלול לפורמט קריא?",
+							"name": "ערבוב הנתונים וחלוקה מחדש למחלקות אימון ובדיקה, הגדלת מספר האיטרציות בלמידה פי 2",
 							"ownedElements": [
 								{
 									"_type": "FCFlow",
-									"_id": "AAAAAAF+KZcFReg29Xo=",
+									"_id": "AAAAAAF+LrTAFPH/pL4=",
 									"_parent": {
-										"$ref": "AAAAAAF+KZUinOgSrYc="
+										"$ref": "AAAAAAF+LrLMPfHuHF4="
 									},
-									"name": "כן",
 									"source": {
-										"$ref": "AAAAAAF+KZUinOgSrYc="
+										"$ref": "AAAAAAF+LrLMPfHuHF4="
 									},
 									"target": {
-										"$ref": "AAAAAAF+KYb5B+dsNDE="
-									}
-								},
-								{
-									"_type": "FCFlow",
-									"_id": "AAAAAAF+KZc9FOhDQds=",
-									"_parent": {
-										"$ref": "AAAAAAF+KZUinOgSrYc="
-									},
-									"name": "לא",
-									"source": {
-										"$ref": "AAAAAAF+KZUinOgSrYc="
-									},
-									"target": {
-										"$ref": "AAAAAAF+KZHSSufZkZU="
-									}
-								},
-								{
-									"_type": "FCFlow",
-									"_id": "AAAAAAF+KZgcT+hPAj0=",
-									"_parent": {
-										"$ref": "AAAAAAF+KZUinOgSrYc="
-									},
-									"name": "המסלול המקורי",
-									"source": {
-										"$ref": "AAAAAAF+KZUinOgSrYc="
-									},
-									"target": {
-										"$ref": "AAAAAAF+KYb5B+dxAjk="
+										"$ref": "AAAAAAF+Lqjrm/FOd3U="
 									}
 								}
 							]
