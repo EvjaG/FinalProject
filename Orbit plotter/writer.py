@@ -20,7 +20,7 @@ for i in range(len(trainFunc)):
     trainFunc[i]    = 'data/train/'+trainFunc[i]
     testFunc[i]     = 'data/test/'+testFunc[i]
 
-folders = ['data','data/train','data/test'] + trainFunc + testFunc
+folders = ['data','data/gifs','data/train','data/test'] + trainFunc + testFunc
 #check and create data folders if not created
 for folder in folders:
     if not os.path.exists(folder):
@@ -78,7 +78,7 @@ for j in range(how_many_orbits):
         if showAnimation:
             plt.show(block=True)
         if saveGIF:
-            line_ani.save(f"./gifs/{unique_filename}.gif", dpi=300, writer=animation.PillowWriter(fps=40))
+            line_ani.save(f"./data/gifs/{unique_filename}.gif", dpi=300, writer=animation.PillowWriter(fps=40))
 
     
     
