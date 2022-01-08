@@ -7,7 +7,7 @@ import cv2
 import uuid
 
 
-how_many_orbits = 1
+how_many_orbits = 10
 num_of_orbit_types = len(generator.func)
 funcNames = generator.funcName
 
@@ -30,7 +30,8 @@ for folder in folders:
 # What to do in iteration **************************
 #animateB = False
 animateB = True
-saveGIF = 1
+showAnimation = False
+saveGIF = True
 csvWrite = False
 #csvWrite = True
 #picWrite = True
@@ -74,8 +75,10 @@ for j in range(how_many_orbits):
 
         line, = plt.plot((data[0]),(data[1]),(data[2]), lw=5,ls="-", c='green')
         line_ani = animation.FuncAnimation(fig, animate, frames=len(plotA[0]), fargs=(data, line), interval=1000/60, blit=False)
-        plt.show(block=True)
-        line_ani.save(f"{unique_filename}.gif", dpi=300, writer=animation.PillowWriter(fps=40))
+        if showAnimation:
+            plt.show(block=True)
+        if saveGIF:
+            line_ani.save(f"./gifs/{unique_filename}.gif", dpi=300, writer=animation.PillowWriter(fps=40))
 
     
     
