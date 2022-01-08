@@ -7,7 +7,7 @@ import cv2
 import uuid
 
 
-how_many_orbits = 1000
+how_many_orbits = 1
 num_of_orbit_types = len(generator.func)
 funcNames = generator.funcName
 
@@ -28,10 +28,11 @@ for folder in folders:
 #**********************************************
 
 # What to do in iteration **************************
-animateB = False
-# animateB = True
-#csvWrite = False
-csvWrite = True
+#animateB = False
+animateB = True
+saveGIF = 1
+csvWrite = False
+#csvWrite = True
 #picWrite = True
 picWrite = False
 # **************************************************
@@ -64,15 +65,18 @@ for j in range(how_many_orbits):
             line.set_data(data[0:2, :num])
             line.set_3d_properties(data[2, :num])
             return line
-        x,y,z=plot[0],plot[1],plot[2]
+        plotA = plot[0]
+        x,y,z=plotA[0],plotA[1],plotA[2]
 
         data = np.array([x, y, z])
         fig = plt.figure(num="t=z")
         ax = Axes3D(fig)
 
-        line, = plt.plot((data),(data[1]),(data[2]), lw=5,ls="-", c='green')
-        line_ani = animation.FuncAnimation(fig, animate, frames=len(plot[0]), fargs=(data, line), interval=1000/60, blit=False)
+        line, = plt.plot((data[0]),(data[1]),(data[2]), lw=5,ls="-", c='green')
+        line_ani = animation.FuncAnimation(fig, animate, frames=len(plotA[0]), fargs=(data, line), interval=1000/60, blit=False)
         plt.show(block=True)
+        line_ani.save(f"{unique_filename}.gif", dpi=300, writer=animation.PillowWriter(fps=40))
+
     
     
     
