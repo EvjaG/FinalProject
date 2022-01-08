@@ -785,7 +785,7 @@
 											"left": 634,
 											"top": 138,
 											"width": 189,
-											"height": 26,
+											"height": 13,
 											"text": "למידה על המקבצים ותיקון משקולות",
 											"wordWrap": true
 										}
@@ -943,7 +943,7 @@
 											"left": 634,
 											"top": 378,
 											"width": 188,
-											"height": 26,
+											"height": 13,
 											"text": "שמירת משקולות וסיום תהליך הלמידה",
 											"wordWrap": true
 										}
@@ -1682,16 +1682,16 @@
 											},
 											"font": "Arial;13;0",
 											"left": 1058,
-											"top": 322,
+											"top": 314,
 											"width": 196,
 											"height": 26,
-											"text": "שליחת המסלול לפח המחזור וקביעת תאריך מחיקתו מהמסד",
+											"text": "קביעת תאריך מחיקת המסלול מהמסד",
 											"wordWrap": true
 										}
 									],
 									"font": "Arial;13;0",
 									"left": 1048,
-									"top": 312,
+									"top": 304,
 									"width": 216,
 									"height": 88,
 									"nameLabel": {
@@ -1891,7 +1891,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 1166,
-											"top": 272,
+											"top": 268,
 											"width": 15.05029296875,
 											"height": 13,
 											"alpha": 1.3597028696432434,
@@ -1911,7 +1911,7 @@
 										"$ref": "AAAAAAF+KZUinOgUHyQ="
 									},
 									"lineStyle": 2,
-									"points": "1160:239;1160:312",
+									"points": "1160:239;1160:304",
 									"nameLabel": {
 										"$ref": "AAAAAAF+KZc9FOhGULI="
 									}
@@ -2103,7 +2103,7 @@
 							"_parent": {
 								"$ref": "AAAAAAF+KYb5B+dTHOE="
 							},
-							"name": "שליחת המסלול לפח המחזור וקביעת תאריך מחיקתו מהמסד"
+							"name": "קביעת תאריך מחיקת המסלול מהמסד"
 						},
 						{
 							"_type": "FCProcess",
@@ -3602,7 +3602,7 @@
 									"font": "Arial;13;0",
 									"left": 139,
 									"top": 101,
-									"width": 26.02880859375,
+									"width": 21.5283203125,
 									"height": 13,
 									"text": "שרת"
 								},

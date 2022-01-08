@@ -30,10 +30,10 @@ for folder in folders:
 # What to do in iteration **************************
 animateB = False
 # animateB = True
-csvWrite = False
-# csvWrite = True
-picWrite = True
-# picWrite = False
+#csvWrite = False
+csvWrite = True
+#picWrite = True
+picWrite = False
 # **************************************************
 
 
