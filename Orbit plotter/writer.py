@@ -12,19 +12,19 @@ from mpl_toolkits.mplot3d import Axes3D
 
 # What to do in iteration **************************
 #animateB = False
-animateB = True
+animateB = False
 showAnimation = False
-saveGIF = True
+saveGIF = False
 csvWrite = False
 #csvWrite = True
 #picWrite = True
-picWrite = False
+picWrite = True
 # **************************************************
-how_many_orbits = 10
+how_many_orbits = 15
 num_of_orbit_types = len(generator.func)
 funcNames = generator.funcName
 
-def animateBFunc(plot,unique_filename):
+def animateBFunc(plot,unique_filename,saveGIF=saveGIF,showAnimation=showAnimation):
     plt.rcParams["figure.figsize"] = [7.00, 3.50]
     plt.rcParams["figure.autolayout"] = True
     def animate(num, data, line):
@@ -65,8 +65,6 @@ def csvWriteFunc(plot,pather,customTime=False):
             y = (str(data[2][i]))
             z = (str(data[3][i]))
             writer.writerow([t,x,y,z])
-            time+=0.1
-        pass
     else:
         for i in range(len(data[0])):
             t = (str(np.float16(time)))
@@ -77,10 +75,11 @@ def csvWriteFunc(plot,pather,customTime=False):
             time+=0.1
 
 def picWriteFunc(plot,pather):
-    cv2.imwrite(pather+'.png',np.array(plot[0]))
+    arr = np.array(plot)
+    cv2.imwrite(pather+'.png',arr)
 
 
-if(__name__=='main'):
+if __name__ == '__main__':
     #create data folder designations***************
     trainFunc = funcNames.copy()
     testFunc = funcNames.copy()
@@ -119,4 +118,4 @@ if(__name__=='main'):
             csvWriteFunc(plot,pather)
 
         if picWrite:
-            picWriteFunc(plot, pather)
+            picWriteFunc(plot[0], pather)
