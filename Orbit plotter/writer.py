@@ -20,7 +20,7 @@ csvWrite = False
 #picWrite = True
 picWrite = True
 # **************************************************
-how_many_orbits = 15
+how_many_orbits = 100000
 num_of_orbit_types = len(generator.func)
 funcNames = generator.funcName
 
@@ -75,8 +75,19 @@ def csvWriteFunc(plot,pather,customTime=False):
             time+=0.1
 
 def picWriteFunc(plot,pather):
-    arr = np.array(plot)
-    cv2.imwrite(pather+'.png',arr)
+    arr = img = np.array(plot,dtype=np.float32)
+    scale_percent = 1000 # percent of original size
+    width = int(img.shape[1] * scale_percent / 100)
+    height = int(img.shape[0] * scale_percent / 100)
+    dim = (width, height)
+    
+    # resize image
+    arr = cv2.resize(img, dim, interpolation = cv2.INTER_AREA)
+
+    # arr = cv2.resize(arr,)
+    # arr = np.vstack((arr,arr,arr))
+    # arr = cv2.cvtColor(arr,cv2.COLOR_GRAY2RGB)
+    cv2.imwrite(pather+'.jpg',arr)
 
 
 if __name__ == '__main__':
