@@ -63,30 +63,30 @@ def csvWriteFunc(plot,pather,customTime=False):
     # write rows to the csv file
     if customTime:
         for i in range(len(data[0])):
-            t = (str(data[0][i]))
-            x = (str(data[1][i]))
-            y = (str(data[2][i]))
-            z = (str(data[3][i]))
-            yv = (str(data[4][i]))
-            xv = (str(data[5][i]))
-            zv = (str(data[6][i]))
-            ya = (str(data[7][i]))
-            xa = (str(data[8][i]))
-            za = (str(data[9][i]))
+            t   = str(data[0][i])
+            x   = str(data[1][i])
+            y   = str(data[2][i])
+            z   = str(data[3][i])
+            yv  = str(data[4][i])
+            xv  = str(data[5][i])
+            zv  = str(data[6][i])
+            ya  = str(data[7][i])
+            xa  = str(data[8][i])
+            za  = str(data[9][i])
 
             writer.writerow([t,x,y,z,yv,xv,zv,ya,xa,za])
     else:
         for i in range(len(data[0])):
-            t = (str(np.float16(time)))
-            x = (str(data[0][i]))
-            y = (str(data[1][i]))
-            z = (str(data[2][i]))
-            yv = (str(data[3][i]))
-            xv = (str(data[4][i]))
-            zv = (str(data[5][i]))
-            ya = (str(data[6][i]))
-            xa = (str(data[7][i]))
-            za = (str(data[8][i]))
+            t   = str(np.float16(time))
+            x   = str(data[0][i])
+            y   = str(data[1][i])
+            z   = str(data[2][i])
+            yv  = str(data[3][i])
+            xv  = str(data[4][i])
+            zv  = str(data[5][i])
+            ya  = str(data[6][i])
+            xa  = str(data[7][i])
+            za  = str(data[8][i])
 
             writer.writerow([t,x,y,z,yv,xv,zv,ya,xa,za])
             time+=0.1
@@ -138,17 +138,17 @@ def mainFunc():
         len_plot = len(plot[0])
 
         # calculate velocities
-        yv = plot[0][1:len_plot] -plot[0][0:len_plot-1] 
-        xv = plot[1][1:len_plot] -plot[1][0:len_plot-1] 
-        zv = plot[2][1:len_plot] -plot[2][0:len_plot-1] 
+        yv = (plot[0][1:len_plot] -plot[0][0:len_plot-1])/(0.1)
+        xv = (plot[1][1:len_plot] -plot[1][0:len_plot-1])/(0.1)
+        zv = (plot[2][1:len_plot] -plot[2][0:len_plot-1])/(0.1)
         yv=np.insert(yv,0,0)
         xv=np.insert(xv,0,0)
         zv=np.insert(zv,0,0)
 
         # calculate accelerations
-        ya = yv[1:len_plot] -yv[0:len_plot-1] 
-        xa = xv[1:len_plot] -xv[0:len_plot-1] 
-        za = zv[1:len_plot] -zv[0:len_plot-1] 
+        ya = (yv[1:len_plot] -yv[0:len_plot-1])/(0.1) 
+        xa = (xv[1:len_plot] -xv[0:len_plot-1])/(0.1) 
+        za = (zv[1:len_plot] -zv[0:len_plot-1])/(0.1) 
         ya=np.insert(ya,0,0)
         xa=np.insert(xa,0,0)
         za=np.insert(za,0,0)
