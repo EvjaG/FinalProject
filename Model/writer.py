@@ -15,9 +15,9 @@ from mpl_toolkits.mplot3d import Axes3D
 animateB = False
 showAnimation = False
 saveGIF = False
+csvWrite = True
 csvWrite = False
-#csvWrite = True
-#picWrite = True
+picWrite = False
 picWrite = True
 
 resizeFactor = 1
@@ -26,7 +26,7 @@ how_many_orbits = 100
 num_of_orbit_types = len(generator.func)
 funcNames = generator.funcName
 
-def animateBFunc(plot,unique_filename,saveGIF=saveGIF,showAnimation=showAnimation):
+def animateBFunc(plotA,unique_filename,saveGIF=saveGIF,showAnimation=showAnimation):
     plt.rcParams["figure.figsize"] = [7.00, 3.50]
     plt.rcParams["figure.autolayout"] = True
     def animate(num, data, line):
@@ -35,7 +35,6 @@ def animateBFunc(plot,unique_filename,saveGIF=saveGIF,showAnimation=showAnimatio
         line.set_data(data[0:2, :num])
         line.set_3d_properties(data[2, :num])
         return line
-    plotA = plot[0]
     x,y,z=plotA[0],plotA[1],plotA[2]
 
     data = np.array([x, y, z])
@@ -54,10 +53,12 @@ def csvWriteFunc(plot,pather,customTime=False):
     f=  open(pather+'.csv', 'w+',newline='')
     # create the csv writer
     writer = csv.writer(f)
-    writer.writerow(["t","x","y","z"])
+    writer.writerow(["t","y","x","z","yv","xv","zv","ya","xa","za"])
     # writer.writerow(["t","x","y","z","vx","vy","vz"])
 
-    data=plot[0]
+
+
+    data=plot
     time=0
     # write rows to the csv file
     if customTime:
@@ -66,14 +67,28 @@ def csvWriteFunc(plot,pather,customTime=False):
             x = (str(data[1][i]))
             y = (str(data[2][i]))
             z = (str(data[3][i]))
-            writer.writerow([t,x,y,z])
+            yv = (str(data[4][i]))
+            xv = (str(data[5][i]))
+            zv = (str(data[6][i]))
+            ya = (str(data[7][i]))
+            xa = (str(data[8][i]))
+            za = (str(data[9][i]))
+
+            writer.writerow([t,x,y,z,yv,xv,zv,ya,xa,za])
     else:
         for i in range(len(data[0])):
             t = (str(np.float16(time)))
             x = (str(data[0][i]))
             y = (str(data[1][i]))
             z = (str(data[2][i]))
-            writer.writerow([t,x,y,z])
+            yv = (str(data[3][i]))
+            xv = (str(data[4][i]))
+            zv = (str(data[5][i]))
+            ya = (str(data[6][i]))
+            xa = (str(data[7][i]))
+            za = (str(data[8][i]))
+
+            writer.writerow([t,x,y,z,yv,xv,zv,ya,xa,za])
             time+=0.1
 
 def picWriteFunc(plot,pather):
@@ -114,24 +129,42 @@ def mainFunc():
 
     for j in range(how_many_orbits):
         f_type = random.randint(0, num_of_orbit_types-1)
-        plot = generator.getOrbit(f_type=f_type)
+        plot = generator.getOrbit(f_type=f_type)[0]
         if j >= 0.8 * how_many_orbits:
                 traintest = "test"
         unique_filename = str(uuid.uuid4())
         f_type = funcNames[f_type]
         pather = f'./data/{traintest}/{f_type}/data_{unique_filename}'
+        len_plot = len(plot[0])
+
+        # calculate velocities
+        yv = plot[0][1:len_plot] -plot[0][0:len_plot-1] 
+        xv = plot[1][1:len_plot] -plot[1][0:len_plot-1] 
+        zv = plot[2][1:len_plot] -plot[2][0:len_plot-1] 
+        yv=np.insert(yv,0,0)
+        xv=np.insert(xv,0,0)
+        zv=np.insert(zv,0,0)
+
+        # calculate accelerations
+        ya = yv[1:len_plot] -yv[0:len_plot-1] 
+        xa = xv[1:len_plot] -xv[0:len_plot-1] 
+        za = zv[1:len_plot] -zv[0:len_plot-1] 
+        ya=np.insert(ya,0,0)
+        xa=np.insert(xa,0,0)
+        za=np.insert(za,0,0)
+
+
+        # attach velocities and accelerations to plot
+        plot += [yv,xv,zv,ya,xa,za]
 
         if animateB:
-            animateBFunc(plot,unique_filename)
-
-        
-        
+            animateBFunc(plot[0:3],unique_filename)
         
         if csvWrite:
             csvWriteFunc(plot,pather)
 
         if picWrite:
-            picWriteFunc(plot[0], pather)
+            picWriteFunc(plot, pather)
 
 if __name__ == '__main__':
     mainFunc()
