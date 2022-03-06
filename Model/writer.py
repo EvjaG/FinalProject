@@ -19,8 +19,10 @@ csvWrite = False
 #csvWrite = True
 #picWrite = True
 picWrite = True
+
+resizeFactor = 1
 # **************************************************
-how_many_orbits = 500
+how_many_orbits = 100
 num_of_orbit_types = len(generator.func)
 funcNames = generator.funcName
 
@@ -76,7 +78,7 @@ def csvWriteFunc(plot,pather,customTime=False):
 
 def picWriteFunc(plot,pather):
     arr = img = np.array(plot,dtype=np.float32)
-    scale_percent = 1000 # percent of original size
+    scale_percent = 100*resizeFactor # percent of original size
     width = int(img.shape[1] * scale_percent / 100)
     height = int(img.shape[0] * scale_percent / 100)
     dim = (width, height)
@@ -90,7 +92,7 @@ def picWriteFunc(plot,pather):
     cv2.imwrite(pather+'.jpg',arr)
 
 
-if __name__ == '__main__':
+def mainFunc():
     #create data folder designations***************
     trainFunc = funcNames.copy()
     testFunc = funcNames.copy()
@@ -130,3 +132,7 @@ if __name__ == '__main__':
 
         if picWrite:
             picWriteFunc(plot[0], pather)
+
+if __name__ == '__main__':
+    mainFunc()
+
