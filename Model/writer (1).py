@@ -21,6 +21,8 @@ picWrite = False
 picWrite = True
 
 resizeFactor = 1
+num_points=100
+generator.num_of_points=num_points
 # **************************************************
 how_many_orbits = 100
 num_of_orbit_types = len(generator.func)
@@ -136,6 +138,17 @@ def mainFunc():
         f_type = funcNames[f_type]
         pather = f'./data/{traintest}/{f_type}/data_{unique_filename}'
         len_plot = len(plot[0])
+
+        # normalize data
+        #taking max and min
+        my,ny = plot[0].max(),plot[0].min()
+        mx,nx = plot[1].max(),plot[1].min()
+        mz,nz = plot[2].max(),plot[2].min()
+        #
+        plot[0]=(plot[0]-ny)/(my-ny + 0.00001)
+        plot[1]=(plot[1]-nx)/(mx-nx + 0.00001)
+        plot[2]=(plot[2]-nz)/(mz-nz + 0.00001)
+
 
         # calculate velocities
         yv = (plot[0][1:len_plot] -plot[0][0:len_plot-1])/(0.1)
