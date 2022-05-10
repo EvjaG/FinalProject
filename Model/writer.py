@@ -139,7 +139,8 @@ def mainFunc():
         f_type = funcNames[f_type]
         pather = f'./data/data_{unique_filename}'
         if not oneFolder:
-            pather += f"{traintest}/{f_type}/data_{unique_filename}"
+            pather += f"{traintest}/{f_type}/"
+        pather += f'{unique_filename}'
         len_plot = len(plot[0])
 
         # normalize data
