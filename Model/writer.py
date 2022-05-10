@@ -15,10 +15,11 @@ from mpl_toolkits.mplot3d import Axes3D
 animateB = False
 showAnimation = False
 saveGIF = False
-csvWrite = True
 csvWrite = False
+csvWrite = True
+# picWrite = True
 picWrite = False
-picWrite = True
+oneFolder = False
 
 resizeFactor = 1
 num_points=100
@@ -136,7 +137,9 @@ def mainFunc():
                 traintest = "test"
         unique_filename = str(uuid.uuid4())
         f_type = funcNames[f_type]
-        pather = f'./data/{traintest}/{f_type}/data_{unique_filename}'
+        pather = f'./data/data_{unique_filename}'
+        if not oneFolder:
+            pather += f"{traintest}/{f_type}/data_{unique_filename}"
         len_plot = len(plot[0])
 
         # normalize data
