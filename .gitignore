@@ -2,3 +2,4 @@ Orbit plotter/.vscode
 Orbit plotter/__pycache__
 Orbit plotter/data/*
 Model/data/*
+hadoop fs/pydoop
