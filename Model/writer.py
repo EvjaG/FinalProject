@@ -21,11 +21,16 @@ csvWrite = True
 picWrite = False
 oneFolder = False
 
+csv_loc = False # to include location in generated tables
+csv_vel = True  # to include velocity in generated tables  
+csv_acc = False # to include acceleration in generated tables
+csv_tim = False # to include timestamp in generated tables
+
 resizeFactor = 1
 num_points=100
 generator.num_of_points=num_points
 # **************************************************
-how_many_orbits = 100
+how_many_orbits = 20
 num_of_orbit_types = len(generator.func)
 funcNames = generator.funcName
 
@@ -53,46 +58,52 @@ def animateBFunc(plotA,unique_filename,saveGIF=saveGIF,showAnimation=showAnimati
 
 
 def csvWriteFunc(plot,pather,customTime=False):
-    f=  open(pather+'.csv', 'w+',newline='')
+    f=  open(pather+'.csv', 'w',newline='')
     # create the csv writer
     writer = csv.writer(f)
-    writer.writerow(["t","y","x","z","yv","xv","zv","ya","xa","za"])
+    # writer.writerow(["t","y","x","z","yv","xv","zv","ya","xa","za"])
     # writer.writerow(["t","x","y","z","vx","vy","vz"])
 
 
 
     data=plot
     time=0
+    addTime = 0
+    if(customTime):
+      addTime = 1
     # write rows to the csv file
-    if customTime:
-        for i in range(len(data[0])):
-            t   = str(data[0][i])
-            x   = str(data[1][i])
-            y   = str(data[2][i])
-            z   = str(data[3][i])
-            yv  = str(data[4][i])
-            xv  = str(data[5][i])
-            zv  = str(data[6][i])
-            ya  = str(data[7][i])
-            xa  = str(data[8][i])
-            za  = str(data[9][i])
+    for i in range(len(data[0])):
+        t   = str(np.float16(time))
+        if customTime:
+            t = str(data[0][i])
+        x   = str(data[0+addTime][i])
+        y   = str(data[1+addTime][i])
+        z   = str(data[2+addTime][i])
+        yv  = str(data[3+addTime][i])
+        xv  = str(data[4+addTime][i])
+        zv  = str(data[5+addTime][i])
+        ya  = str(data[6+addTime][i])
+        xa  = str(data[7+addTime][i])
+        za  = str(data[8+addTime][i])
 
-            writer.writerow([t,x,y,z,yv,xv,zv,ya,xa,za])
-    else:
-        for i in range(len(data[0])):
-            t   = str(np.float16(time))
-            x   = str(data[0][i])
-            y   = str(data[1][i])
-            z   = str(data[2][i])
-            yv  = str(data[3][i])
-            xv  = str(data[4][i])
-            zv  = str(data[5][i])
-            ya  = str(data[6][i])
-            xa  = str(data[7][i])
-            za  = str(data[8][i])
-
-            writer.writerow([t,x,y,z,yv,xv,zv,ya,xa,za])
-            time+=0.1
+        toAppend = []
+        if csv_tim:
+            toAppend.append(t)
+        if csv_loc:
+            toAppend.append(y)
+            toAppend.append(x)
+            toAppend.append(z)
+        if csv_vel:
+            toAppend.append(yv)
+            toAppend.append(xv)
+            toAppend.append(zv)
+        if csv_acc:
+            toAppend.append(ya)
+            toAppend.append(xa)
+            toAppend.append(za)
+        
+        writer.writerow(toAppend)
+        time+=0.1
 
 def picWriteFunc(plot,pather):
     arr = img = np.array(plot,dtype=np.float32)
@@ -115,8 +126,8 @@ def mainFunc():
     trainFunc = funcNames.copy()
     testFunc = funcNames.copy()
     for i in range(len(trainFunc)):
-        trainFunc[i]    = 'data/train/'+trainFunc[i]
-        testFunc[i]     = 'data/test/'+testFunc[i]
+        trainFunc[i]    = f'data/train/{i}'
+        testFunc[i]     = f'data/test/{i}'
 
     folders = ['data','data/gifs','data/train','data/test'] + trainFunc + testFunc
     #check and create data folders if not created
@@ -137,10 +148,12 @@ def mainFunc():
                 traintest = "test"
         unique_filename = str(uuid.uuid4())
         f_type = funcNames[f_type]
-        pather = f'./data/data_{unique_filename}'
+        pather = f'./data/'
+        
         if not oneFolder:
-            pather += f"{traintest}/{f_type}/"
-        pather += f'{unique_filename}'
+          pather += f"{traintest}/{funcNames.index(f_type)}/data_{unique_filename}"
+        else:
+          pather += unique_filename
         len_plot = len(plot[0])
 
         # normalize data
